@@ -71,10 +71,11 @@ namespace MatcheoAltice
             this.panel1.Controls.Add(this.Rollb);
             this.panel1.Controls.Add(this.Userlb);
             this.panel1.Controls.Add(this.iconPictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 977);
+            this.panel1.Size = new System.Drawing.Size(352, 1045);
             this.panel1.TabIndex = 0;
             // 
             // iconButton5
@@ -173,7 +174,7 @@ namespace MatcheoAltice
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(20, 892);
+            this.panel6.Location = new System.Drawing.Point(24, 970);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(316, 6);
@@ -190,7 +191,7 @@ namespace MatcheoAltice
             this.iconButton11.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton11.IconSize = 27;
             this.iconButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton11.Location = new System.Drawing.Point(16, 908);
+            this.iconButton11.Location = new System.Drawing.Point(20, 986);
             this.iconButton11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton11.Name = "iconButton11";
             this.iconButton11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -279,10 +280,11 @@ namespace MatcheoAltice
             this.panelCForm.BackColor = System.Drawing.Color.White;
             this.panelCForm.Controls.Add(this.label2);
             this.panelCForm.Controls.Add(this.label1);
+            this.panelCForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCForm.Location = new System.Drawing.Point(352, 38);
             this.panelCForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelCForm.Name = "panelCForm";
-            this.panelCForm.Size = new System.Drawing.Size(1268, 977);
+            this.panelCForm.Size = new System.Drawing.Size(1445, 1045);
             this.panelCForm.TabIndex = 1;
             // 
             // label2
@@ -290,7 +292,7 @@ namespace MatcheoAltice
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(380, 526);
+            this.label2.Location = new System.Drawing.Point(484, 562);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(529, 47);
@@ -303,7 +305,7 @@ namespace MatcheoAltice
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(327, 354);
+            this.label1.Location = new System.Drawing.Point(431, 390);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(638, 170);
@@ -322,7 +324,7 @@ namespace MatcheoAltice
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1560, 38);
+            this.panel3.Size = new System.Drawing.Size(1797, 38);
             this.panel3.TabIndex = 2;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
@@ -335,7 +337,7 @@ namespace MatcheoAltice
             this.iconButton6.IconColor = System.Drawing.Color.LightGray;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton6.IconSize = 26;
-            this.iconButton6.Location = new System.Drawing.Point(1470, 0);
+            this.iconButton6.Location = new System.Drawing.Point(1707, 0);
             this.iconButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(45, 38);
@@ -352,7 +354,7 @@ namespace MatcheoAltice
             this.iconButton7.IconColor = System.Drawing.Color.LightGray;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton7.IconSize = 26;
-            this.iconButton7.Location = new System.Drawing.Point(1515, 0);
+            this.iconButton7.Location = new System.Drawing.Point(1752, 0);
             this.iconButton7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(45, 38);
@@ -370,7 +372,7 @@ namespace MatcheoAltice
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 26;
-            this.iconButton1.Location = new System.Drawing.Point(1581, 0);
+            this.iconButton1.Location = new System.Drawing.Point(1755, 0);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
@@ -387,7 +389,7 @@ namespace MatcheoAltice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1560, 985);
+            this.ClientSize = new System.Drawing.Size(1797, 1083);
             this.Controls.Add(this.panelCForm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
