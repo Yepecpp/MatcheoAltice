@@ -48,7 +48,8 @@ namespace MatcheoAltice
                         TotalCantidadRecargas = row["Total Cantidad Recargas"].ToString(),
                         TotalDiasRecargas = row["Total Dias Recargas"].ToString(),
                         TotalMontoRecargas = row["Total Monto Recargas"].ToString()
-                    }).ToList();
+                    }).Where(k => !string.IsNullOrEmpty(k.DNumb))
+                    .ToList();
         }
         public Altice()
         {

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
@@ -57,11 +59,19 @@ namespace MatcheoAltice
 
             DataTable Table = Cargar_doc();
             if (Table == null)
+
+                // MessageBox.Show("No se pudo cargar el archivo");
+                return;
+            try
             {
-                MessageBox.Show("No se pudo cargar el archivo");
+                Basedoc = Base.Parse(Table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El archivo selecionado no es valido o erroneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
-            Basedoc = Base.Parse(Table);
             UnirTablas();
 
         }
@@ -81,6 +91,8 @@ namespace MatcheoAltice
         }
         private DataTable Cargar_doc()
         {
+
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Archivos de Excel (*.xlsx)|*.xlsx";
             openFileDialog1.Title = "Seleccione el primer archivo de Excel";
@@ -100,7 +112,12 @@ namespace MatcheoAltice
 
                 }
             }
+            MessageBox.Show("No se pudo cargar el archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
+
+
+
+
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -112,16 +129,38 @@ namespace MatcheoAltice
         {
             Application.Exit();
         }
-
+        Task SearchTask = new Task(() => { });
+        CancellationTokenSource tokenSource2 = new CancellationTokenSource();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (SearchTask.Status == TaskStatus.Running)
             {
-                dataGridView1.DataSource = DB;
-                return;
+                // Cancelar la tarea anterior
+                tokenSource2.Cancel();
+
+
             }
-            // Filtrar los datos del DataGridView
-            dataGridView1.DataSource = Final.Filter(DB, textBox1.Text);
+            SearchTask = Task.Delay(700).ContinueWith(_ =>
+            {
+                Invoke(new Action(() =>
+                {
+                    if (tokenSource2.IsCancellationRequested)
+                    {
+                        tokenSource2 = new CancellationTokenSource();
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(textBox1.Text))
+                    {
+                        dataGridView1.DataSource = DB;
+                        return;
+                    }
+                    // Filtrar los datos del DataGridView
+                    dataGridView1.DataSource = Final.Filter(DB, textBox1.Text);
+                }));
+            });
+
+
+
         }
 
 
@@ -133,8 +172,16 @@ namespace MatcheoAltice
                 MessageBox.Show("No se pudo cargar el archivo");
                 return;
             }
+            try
+            {
+                Alticedoc = Altice.Parse(Table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El archivo selecionado no es valido o erroneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            Alticedoc = Altice.Parse(Table);
+                return;
+            }
             UnirTablas();
         }
 
@@ -157,49 +204,18 @@ namespace MatcheoAltice
                 return;
             }
             await Task.Run(() =>
-            {
-                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.ActiveSheet;
+           {
+               try
+               {
+                   ExcelFn.ExportExcel(path, dataGridView1);
+                   MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               }
 
-                try
-                {
-                    worksheet.Name = "Datos";
-
-                    int columnIndex = 0;
-                    // fill the header row
-                    foreach (DataGridViewColumn column in dataGridView1.Columns)
-                    {
-                        columnIndex++;
-                        worksheet.Cells[1, columnIndex] = column.HeaderText;
-                    }
-                    // fill the actual content
-                    int rowIndex = 0;
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        rowIndex++;
-                        columnIndex = 0;
-                        foreach (DataGridViewColumn column in dataGridView1.Columns)
-                        {
-                            columnIndex++;
-                            worksheet.Cells[rowIndex + 1, columnIndex] = row.Cells[columnIndex - 1].Value;
-                        }
-                    }
-                    // save the application
-                    workbook.SaveAs(path);
-                    MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    excel.Quit();
-                    workbook = null;
-                    excel = null;
-                }
-            });
+           });
             label1.Text = "Exportado!";
         }
 
@@ -210,13 +226,29 @@ namespace MatcheoAltice
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            label2.Text = $@"{dataGridView1.RowCount} filas";
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
+            // sum the values in list db of .totalMonto
 
+            setDataGrid();
+        }
+        private void setDataGrid()
+        {
+            double sum = 0;
+            (dataGridView1.DataSource as List<Final>).ForEach(x => sum += double.Parse(x.TotalMontoRecargas));
+            //format in currency like 1,000.00$
+            string sumString = sum.ToString("C", CultureInfo.CurrentCulture);
+
+            label2.Text = $@"{dataGridView1.RowCount} filas";
+            label3.Text = $@"Total Monto de Recargas: {sumString}";
+            // dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            setDataGrid();
         }
     }
 }

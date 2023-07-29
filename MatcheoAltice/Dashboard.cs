@@ -111,5 +111,31 @@ namespace MatcheoAltice
         {
             Application.Exit();
         }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                iconButton6.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+                return;
+            }
+
+            this.WindowState = FormWindowState.Maximized;
+            iconButton6.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+
+        }
+
+        private void panelCForm_SizeChanged(object sender, EventArgs e)
+        {
+            this.panel4.Location = new System.Drawing.Point((this.panelCForm.Width / 2) - (this.panel4.Width / 2), (int)Math.Round((this.panelCForm.Height / 2.2)) - (this.panel4.Height / 2));
+        }
     }
 }

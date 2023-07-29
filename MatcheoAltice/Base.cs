@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace MatcheoAltice
 {
@@ -13,6 +14,7 @@ namespace MatcheoAltice
         public string Numero { get; set; }
         public string Vendedor { get; set; }
         public string Operador { get; set; }
+        public bool IsDuplicate { get; set; }
         public static List<Base> Parse(DataTable x)
         {
             if (x is null)
@@ -45,8 +47,20 @@ namespace MatcheoAltice
 
                 bases.Add(b);
             }
-            return bases;
+            return bases.OrderBy(k => k.Fecha)
+                              .Where(k => !string.IsNullOrEmpty(k.Numero)) // Remove records where k.Numero is an empty string
+                              .GroupBy(k => k.Numero)
+                              .SelectMany(g => g.Select((record, index) => new { Record = record, Index = index }))
+                              .Select(item =>
+                              {
+                                  var record = item.Record;
+                                  if (item.Index > 0)
+                                      record.IsDuplicate = true;
+                                  else record.IsDuplicate = false;
 
+                                  return record;
+                              })
+                              .ToList();
         }
         public Base()
         {

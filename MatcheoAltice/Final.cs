@@ -38,10 +38,14 @@ namespace MatcheoAltice
         {
             // join alt.sim on baseDoc.sim 
 
+            //remove the list 
+            // Find and mark duplicates
 
+            // create lamda function that recibes a basedoc? and returns a string
             return (from i in altDoc
                     join k in baseDoc
-                        on i.DNumb equals k.Numero into joinedDocs
+                    on i.DNumb equals k.Numero
+                    into joinedDocs
                     from k in joinedDocs.DefaultIfEmpty()
                     select new Final
                     {
@@ -49,24 +53,24 @@ namespace MatcheoAltice
                         DNumb = i.DNumb,
                         Fecha = k?.Fecha ?? i.FechaActivacion,
                         Sim = i.Sim,
-                        Estado = i.Estado,
+                        Estado = k != null && k.IsDuplicate ? "Duplicado" : i.Estado,
                         OrdenInstalacion = i.Ordenes,
                         Codistribuidor = k?.Vendedor ?? "No asignado",
                         Operador = k?.Operador ?? "No asignado",
                         Cedula = k?.Cedula ?? "No asignado",
-                        TotalCantidadRecargas = i.TotalCantidadRecargas,
                         TotalDiasRecargas = i.TotalDiasRecargas,
+                        TotalCantidadRecargas = i.TotalCantidadRecargas,
                         TotalMontoRecargas = i.TotalMontoRecargas
+                        // IsDuplicate = k.IsDuplicate // Include the IsDuplicate flag in the Final result
                     }).ToList();
-
         }
         public static List<Final> Filter(List<Final> DB, string filter)
         {
             filter = filter.ToLower();
             var result = from i in DB
                              //filter by any column
-                         where i.Nombre.ToLower().Contains(filter) || i.DNumb.Contains(filter) || i.Sim.ToLower().Contains(filter) || i.OrdenInstalacion.Contains(filter) || i.Codistribuidor.ToLower().Contains(filter) || i.Operador.ToLower().Contains(filter)
-                         || i.Fecha.ToString().Contains(filter)
+                         where i.Nombre.ToLower().Contains(filter) || i.DNumb.Contains(filter) || i.Sim.ToLower().Contains(filter) || i.OrdenInstalacion.ToLower().Contains(filter) || i.Codistribuidor.ToLower().Contains(filter) || i.Operador.ToLower().Contains(filter)
+                        || i.Estado.ToLower().Contains(filter) || i.Fecha.ToString().Contains(filter)
                          select i;
             return result.ToList();
         }
