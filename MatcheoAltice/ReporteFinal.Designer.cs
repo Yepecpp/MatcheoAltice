@@ -30,22 +30,9 @@ namespace MatcheoAltice
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnExportar = new FontAwesome.Sharp.IconButton();
-            this.btnLocal = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.btnAltice = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNumbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,12 +46,26 @@ namespace MatcheoAltice
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExportar = new FontAwesome.Sharp.IconButton();
+            this.btnLocal = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.btnAltice = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.GenButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,14 +79,14 @@ namespace MatcheoAltice
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
@@ -101,14 +102,14 @@ namespace MatcheoAltice
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dataGridView1.DataSource = this.finalBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(0, 132);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
@@ -121,6 +122,106 @@ namespace MatcheoAltice
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dNumbDataGridViewTextBoxColumn
+            // 
+            this.dNumbDataGridViewTextBoxColumn.DataPropertyName = "DNumb";
+            this.dNumbDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.dNumbDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dNumbDataGridViewTextBoxColumn.Name = "dNumbDataGridViewTextBoxColumn";
+            this.dNumbDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // simDataGridViewTextBoxColumn
+            // 
+            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
+            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
+            this.simDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
+            this.simDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // ordenInstalacionDataGridViewTextBoxColumn
+            // 
+            this.ordenInstalacionDataGridViewTextBoxColumn.DataPropertyName = "OrdenInstalacion";
+            this.ordenInstalacionDataGridViewTextBoxColumn.HeaderText = "Orden de Instalacion";
+            this.ordenInstalacionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.ordenInstalacionDataGridViewTextBoxColumn.Name = "ordenInstalacionDataGridViewTextBoxColumn";
+            this.ordenInstalacionDataGridViewTextBoxColumn.Width = 270;
+            // 
+            // codistribuidorDataGridViewTextBoxColumn
+            // 
+            this.codistribuidorDataGridViewTextBoxColumn.DataPropertyName = "Codistribuidor";
+            this.codistribuidorDataGridViewTextBoxColumn.HeaderText = "Codistribuidor";
+            this.codistribuidorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codistribuidorDataGridViewTextBoxColumn.Name = "codistribuidorDataGridViewTextBoxColumn";
+            this.codistribuidorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // operadorDataGridViewTextBoxColumn
+            // 
+            this.operadorDataGridViewTextBoxColumn.DataPropertyName = "Operador";
+            this.operadorDataGridViewTextBoxColumn.HeaderText = "Operador";
+            this.operadorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.operadorDataGridViewTextBoxColumn.Name = "operadorDataGridViewTextBoxColumn";
+            this.operadorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.cedulaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalDiasRecargas";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Total Dias";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TotalCantidadRecargas";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Total Cantidad";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "TotalMontoRecargas";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Total Monto";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // finalBindingSource
+            // 
+            this.finalBindingSource.DataSource = typeof(MatcheoAltice.Final);
             // 
             // btnExportar
             // 
@@ -241,10 +342,9 @@ namespace MatcheoAltice
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 721);
+            this.label1.Location = new System.Drawing.Point(48, 630);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 22);
             this.label1.TabIndex = 47;
@@ -265,6 +365,7 @@ namespace MatcheoAltice
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.GenButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnLocal);
@@ -317,105 +418,25 @@ namespace MatcheoAltice
             this.label3.TabIndex = 49;
             this.label3.Text = "Total Monto de Recargas: $0";
             // 
-            // nombreDataGridViewTextBoxColumn
+            // GenButton
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dNumbDataGridViewTextBoxColumn
-            // 
-            this.dNumbDataGridViewTextBoxColumn.DataPropertyName = "DNumb";
-            this.dNumbDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.dNumbDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dNumbDataGridViewTextBoxColumn.Name = "dNumbDataGridViewTextBoxColumn";
-            this.dNumbDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // simDataGridViewTextBoxColumn
-            // 
-            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
-            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
-            this.simDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
-            this.simDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // ordenInstalacionDataGridViewTextBoxColumn
-            // 
-            this.ordenInstalacionDataGridViewTextBoxColumn.DataPropertyName = "OrdenInstalacion";
-            this.ordenInstalacionDataGridViewTextBoxColumn.HeaderText = "Orden de Instalacion";
-            this.ordenInstalacionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.ordenInstalacionDataGridViewTextBoxColumn.Name = "ordenInstalacionDataGridViewTextBoxColumn";
-            this.ordenInstalacionDataGridViewTextBoxColumn.Width = 270;
-            // 
-            // codistribuidorDataGridViewTextBoxColumn
-            // 
-            this.codistribuidorDataGridViewTextBoxColumn.DataPropertyName = "Codistribuidor";
-            this.codistribuidorDataGridViewTextBoxColumn.HeaderText = "Codistribuidor";
-            this.codistribuidorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.codistribuidorDataGridViewTextBoxColumn.Name = "codistribuidorDataGridViewTextBoxColumn";
-            this.codistribuidorDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // operadorDataGridViewTextBoxColumn
-            // 
-            this.operadorDataGridViewTextBoxColumn.DataPropertyName = "Operador";
-            this.operadorDataGridViewTextBoxColumn.HeaderText = "Operador";
-            this.operadorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.operadorDataGridViewTextBoxColumn.Name = "operadorDataGridViewTextBoxColumn";
-            this.operadorDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cedulaDataGridViewTextBoxColumn
-            // 
-            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
-            this.cedulaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
-            this.cedulaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalDiasRecargas";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Total Dias";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TotalCantidadRecargas";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Total Cantidad";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TotalMontoRecargas";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total Monto";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // finalBindingSource
-            // 
-            this.finalBindingSource.DataSource = typeof(MatcheoAltice.Final);
+            this.GenButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GenButton.FlatAppearance.BorderSize = 0;
+            this.GenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GenButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenButton.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
+            this.GenButton.IconColor = System.Drawing.Color.Black;
+            this.GenButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.GenButton.IconSize = 35;
+            this.GenButton.Location = new System.Drawing.Point(0, 687);
+            this.GenButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GenButton.Name = "GenButton";
+            this.GenButton.Size = new System.Drawing.Size(215, 74);
+            this.GenButton.TabIndex = 49;
+            this.GenButton.Text = "Generar Boletin";
+            this.GenButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.GenButton.UseVisualStyleBackColor = true;
+            this.GenButton.Click += new System.EventHandler(this.GenButton_Click);
             // 
             // ReporteFinal
             // 
@@ -432,6 +453,7 @@ namespace MatcheoAltice
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ReporteFinal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -439,7 +461,6 @@ namespace MatcheoAltice
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finalBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +498,6 @@ namespace MatcheoAltice
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private FontAwesome.Sharp.IconButton GenButton;
     }
 }

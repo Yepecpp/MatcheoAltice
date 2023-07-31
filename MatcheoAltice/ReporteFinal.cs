@@ -87,6 +87,7 @@ namespace MatcheoAltice
             dataGridView1.DataSource = DB;
 
             btnExportar.Enabled = true;
+            GenButton.Enabled = true;
 
         }
         private DataTable Cargar_doc()
@@ -249,6 +250,11 @@ namespace MatcheoAltice
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             setDataGrid();
+        }
+
+        private void GenButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

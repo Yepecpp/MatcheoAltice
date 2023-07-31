@@ -138,6 +138,7 @@
       <DependentUpon>ArchivoJosue.cs</DependentUpon>
     </Compile>
     <Compile Include="Base.cs" />
+    <Compile Include="Boletin.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
