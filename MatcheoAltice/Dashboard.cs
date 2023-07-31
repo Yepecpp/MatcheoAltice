@@ -44,6 +44,7 @@ namespace MatcheoAltice
                 activeForm.Close();
                 activeForm = null;
                 timer1.Enabled = true;
+                this.Name = "Dashboard";
                 label2.Text = DateTime.Now.ToString("D");
             }
         }
@@ -51,12 +52,14 @@ namespace MatcheoAltice
         private void iconButton3_Click(object sender, EventArgs e)
         {
             openChildForm(new ArchivoJosue());
+            this.Name = "Archivo Base";
             timer1.Enabled = false;
         }
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
             openChildForm(new UsersCRUD());
+            this.Name = "Usuarios";
             timer1.Enabled = false;
         }
 
@@ -87,12 +90,11 @@ namespace MatcheoAltice
             }
             Userlb.Text = Properties.Settings.Default.Usuario;
         }
-
+        public bool reauth = false;
         private void iconButton11_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
+            reauth = true;
+            this.Close();
         }
 
         private void iconButton4_Click(object sender, EventArgs e)

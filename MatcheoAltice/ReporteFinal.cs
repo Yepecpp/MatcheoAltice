@@ -254,7 +254,7 @@ namespace MatcheoAltice
 
         private void GenButton_Click(object sender, EventArgs e)
         {
-
+            new BoletinScreen(DB).Show();
         }
     }
 }

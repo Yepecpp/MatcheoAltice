@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MatcheoAltice
 {
-    internal class Base
+    public class Base
     {
         // Fechas	Cedula	Sim	Numero	Vendedor	Operador
         public DateTime? Fecha { get; set; }

@@ -220,12 +220,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD683B719E5A67C94CD5F15D1B13E246"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D9A1C430880645C490BD43E3A7598AFD"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -319,6 +313,12 @@
         "OwnerKey" = "8:_067312ECC6E64F73CC8E74B6FB7A97B2"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BD683B719E5A67C94CD5F15D1B13E246"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -337,6 +337,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -353,6 +361,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -966,7 +990,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Matcheo Altice"
         "ProductCode" = "8:{13BCDE0A-B6B4-4126-9DED-ECDC7F86BB6F}"
-        "PackageCode" = "8:{6D1D833E-BE18-417B-BDC8-5E3CF8D01BA9}"
+        "PackageCode" = "8:{9F8D4935-33B9-4F66-9F06-1D914D1D3CB0}"
         "UpgradeCode" = "8:{2F534756-F97D-44F8-B77B-28E7E52ABE2A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1086,21 +1110,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7EC06E79EDA14CE995E9B21F71BCCE6F"
-            {
-            "Name" = "8:MatcheoAltice"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:"
-            "Folder" = "8:_341DF90D2A9049BF82783A0BBBB6990C"
-            "WorkingFolder" = "8:_ECE6F6AA23BD44A29728D39A4850D41C"
-            "Icon" = "8:_49A7BE8885CD4EE4A002210A133F9099"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DE53B8ECDB9A4FD89E649234BACDDF97"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_33AD51FB6F54449597C353BD47B2A672"
             {
             "Name" = "8:MatcheoAltice"
             "Arguments" = "8:"
@@ -1110,6 +1120,20 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_D9A1C430880645C490BD43E3A7598AFD"
             "Folder" = "8:_50F4CF1373BE4A7FB603932FB01B443B"
+            "WorkingFolder" = "8:_ECE6F6AA23BD44A29728D39A4850D41C"
+            "Icon" = "8:_49A7BE8885CD4EE4A002210A133F9099"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_808E7CF2EDEA4AD8B3FC39130A54D9A1"
+            {
+            "Name" = "8:MatcheoAltice"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D9A1C430880645C490BD43E3A7598AFD"
+            "Folder" = "8:_341DF90D2A9049BF82783A0BBBB6990C"
             "WorkingFolder" = "8:_ECE6F6AA23BD44A29728D39A4850D41C"
             "Icon" = "8:_49A7BE8885CD4EE4A002210A133F9099"
             "Feature" = "8:"

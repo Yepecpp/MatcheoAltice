@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MatcheoAltice
 {
-    internal class Final
+    public class Final
     {
         // Nombre Usuario	DN Numero	Fecha Activacion	SIM Card	Total Cantidad Recargas	Total Dias Recargas	Orden Instalacion	Total Monto Recargas	Codistribuidor
         public string Nombre { get; set; }

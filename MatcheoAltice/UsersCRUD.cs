@@ -22,6 +22,8 @@ namespace MatcheoAltice
             DataTable dt = new DataTable();
             Adapter.Fill(dt);
             tablaUsuarios.DataSource = dt;
+            Adapter.Dispose();
+
         }
 
         private void UsersCRUD_Load(object sender, EventArgs e)

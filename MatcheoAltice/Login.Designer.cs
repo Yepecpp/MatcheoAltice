@@ -87,7 +87,7 @@ namespace MatcheoAltice
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.iconButton2.IconColor = System.Drawing.Color.LightGray;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton2.IconSize = 26;
@@ -200,7 +200,7 @@ namespace MatcheoAltice
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 36;
@@ -288,7 +288,7 @@ namespace MatcheoAltice
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -16,9 +16,7 @@ namespace MatcheoAltice
         {
             InitializeComponent();
         }
-
-        Load load = new Load();
-
+        public bool auth = false;
         public void LoginC()
         {
             if (txtClave.Text == "" || txtUsuario.Text == "")
@@ -43,8 +41,8 @@ namespace MatcheoAltice
                             {
                                 Properties.Settings.Default.Rol = dr.GetString(3);
                                 Properties.Settings.Default.Usuario = dr.GetString(1);
-                                this.Hide();
-                                load.Show();
+                                auth = true;
+                                this.Close();
                             }
                             else
                             {

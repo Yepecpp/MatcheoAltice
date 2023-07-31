@@ -1,6 +1,4 @@
-﻿using MySqlX.XDevAPI;
-using OfficeOpenXml.FormulaParsing.Excel.Operators;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace MatcheoAltice
 {
-    internal class InputBoletin
+    public class InputBoletin
     {
         public double minVal;
         public double maxVal;
-        string commisionInput;
+        public string commisionInput;
+
         private bool isPercentage;
         private double commision;
         public double getCommision() => commision;
@@ -23,11 +22,11 @@ namespace MatcheoAltice
             this.minVal = minVal;
             this.maxVal = maxVal;
             this.commisionInput = commisionInput;
-            this.isPercentage = commisionInput.Contains("%");
+            this.isPercentage = this.commisionInput.Contains("%");
             this.commision = isPercentage ? double.Parse(commisionInput.Replace("%", "")) / 100 : double.Parse(commisionInput);
         }
     }
-    class OutBoletin
+    public class OutBoletin
     {
         public string Operator;
         public double? TotalVendido;
