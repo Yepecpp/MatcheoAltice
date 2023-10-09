@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoletinScreen));
@@ -36,8 +37,17 @@
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.minValDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxValDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commisionInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inputBoletinBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnLocal = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputBoletinBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -52,6 +62,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1406, 38);
             this.panel3.TabIndex = 3;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // iconButton8
             // 
@@ -109,47 +120,130 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.minValDataGridViewTextBoxColumn,
+            this.maxValDataGridViewTextBoxColumn,
+            this.commisionInputDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.inputBoletinBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(115, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 43);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1176, 759);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 824);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // minValDataGridViewTextBoxColumn
+            // 
+            this.minValDataGridViewTextBoxColumn.DataPropertyName = "minVal";
+            this.minValDataGridViewTextBoxColumn.HeaderText = "Valor minimo";
+            this.minValDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.minValDataGridViewTextBoxColumn.Name = "minValDataGridViewTextBoxColumn";
+            // 
+            // maxValDataGridViewTextBoxColumn
+            // 
+            this.maxValDataGridViewTextBoxColumn.DataPropertyName = "maxVal";
+            this.maxValDataGridViewTextBoxColumn.HeaderText = "Valor maximo";
+            this.maxValDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.maxValDataGridViewTextBoxColumn.Name = "maxValDataGridViewTextBoxColumn";
+            // 
+            // commisionInputDataGridViewTextBoxColumn
+            // 
+            this.commisionInputDataGridViewTextBoxColumn.DataPropertyName = "commisionInput";
+            this.commisionInputDataGridViewTextBoxColumn.HeaderText = "Comision";
+            this.commisionInputDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.commisionInputDataGridViewTextBoxColumn.Name = "commisionInputDataGridViewTextBoxColumn";
+            // 
+            // inputBoletinBindingSource
+            // 
+            this.inputBoletinBindingSource.DataSource = typeof(MatcheoAltice.InputBoletin);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.btnLocal);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1191, 38);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(215, 838);
+            this.panel1.TabIndex = 5;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.Location = new System.Drawing.Point(0, 620);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(215, 109);
+            this.iconButton1.TabIndex = 7;
+            this.iconButton1.Text = "Volante de Pago Total";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // btnLocal
+            // 
+            this.btnLocal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLocal.FlatAppearance.BorderSize = 0;
+            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocal.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.btnLocal.IconColor = System.Drawing.Color.Black;
+            this.btnLocal.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLocal.IconSize = 40;
+            this.btnLocal.Location = new System.Drawing.Point(0, 729);
+            this.btnLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLocal.Name = "btnLocal";
+            this.btnLocal.Size = new System.Drawing.Size(215, 109);
+            this.btnLocal.TabIndex = 6;
+            this.btnLocal.Text = "Volante de Pago Indiviudal";
+            this.btnLocal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLocal.UseVisualStyleBackColor = true;
+            this.btnLocal.Click += new System.EventHandler(this.btnLocal_Click);
             // 
             // BoletinScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 876);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -159,6 +253,8 @@
             this.Load += new System.EventHandler(this.BoletinScreen_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputBoletinBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -170,5 +266,12 @@
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource inputBoletinBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minValDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxValDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commisionInputDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnLocal;
     }
 }

@@ -89,6 +89,9 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.2.7\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
+    <Reference Include="NodaTime, Version=3.1.9.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.3.1.9\lib\netstandard2.0\NodaTime.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -156,8 +159,12 @@
     <Compile Include="ArchivoAltice.Designer.cs">
       <DependentUpon>ArchivoAltice.cs</DependentUpon>
     </Compile>
+    <Compile Include="dateUtils.cs" />
+    <Compile Include="Estafeta\Pagos.cs" />
+    <Compile Include="Estafeta\Ventas.cs" />
     <Compile Include="ExportExcel.cs" />
     <Compile Include="Final.cs" />
+    <Compile Include="OutBoletin.cs" />
     <Compile Include="ReporteFinal.cs">
       <SubType>Form</SubType>
     </Compile>

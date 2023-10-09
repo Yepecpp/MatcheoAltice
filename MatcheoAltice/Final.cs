@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,7 @@ namespace MatcheoAltice
         public string Nombre { get; set; }
         public string DNumb { get; set; }
         public Nullable<DateTime> Fecha { get; set; }
+        public string FechaTitle => Fecha != null ? DateUtils.parseToSpanish((DateTime)Fecha) : "";
         public string Sim { get; set; }
         public string Estado { get; set; }
         public string OrdenInstalacion { get; set; }
@@ -51,7 +53,7 @@ namespace MatcheoAltice
                     {
                         Nombre = i.Nombre,
                         DNumb = i.DNumb,
-                        Fecha = k?.Fecha ?? i.FechaActivacion,
+                        Fecha = i.FechaActivacion,
                         Sim = i.Sim,
                         Estado = k != null && k.IsDuplicate ? "Duplicado" : i.Estado,
                         OrdenInstalacion = i.Ordenes,
@@ -64,14 +66,31 @@ namespace MatcheoAltice
                         // IsDuplicate = k.IsDuplicate // Include the IsDuplicate flag in the Final result
                     }).ToList();
         }
-        public static List<Final> Filter(List<Final> DB, string filter)
+        public static List<Final> Filter(List<Final> DB, string filter, bool cont)
         {
             filter = filter.ToLower();
-            var result = from i in DB
+            IEnumerable<Final> result;
+            if (!cont)
+            {
+                result = from i in DB
                              //filter by any column
-                         where i.Nombre.ToLower().Contains(filter) || i.DNumb.Contains(filter) || i.Sim.ToLower().Contains(filter) || i.OrdenInstalacion.ToLower().Contains(filter) || i.Codistribuidor.ToLower().Contains(filter) || i.Operador.ToLower().Contains(filter)
-                        || i.Estado.ToLower().Contains(filter) || i.Fecha.ToString().Contains(filter)
+                         where (i.Nombre.ToLower().Contains(filter) || i.DNumb.Contains(filter) || i.Sim.ToLower().Contains(filter) ||
+                         i.OrdenInstalacion.ToLower().Contains(filter) || i.Codistribuidor.ToLower().Contains(filter) || i.Operador.ToLower().Contains(filter)
+                        || i.Estado.ToLower().Contains(filter) || i.FechaTitle.Contains(filter))
+
+
                          select i;
+            }
+            else
+            {
+                //not contains
+                result = from i in DB
+                             //filter by any column
+                         where !(i.Nombre.ToLower().Contains(filter) || i.DNumb.Contains(filter) || i.Sim.ToLower().Contains(filter) ||
+                                                     i.OrdenInstalacion.ToLower().Contains(filter) || i.Codistribuidor.ToLower().Contains(filter) || i.Operador.ToLower().Contains(filter)
+                                                                                || i.Estado.ToLower().Contains(filter) || i.FechaTitle.Contains(filter))
+                         select i;
+            }
             return result.ToList();
         }
     }

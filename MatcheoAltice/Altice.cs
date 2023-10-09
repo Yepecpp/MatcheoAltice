@@ -29,11 +29,12 @@ namespace MatcheoAltice
             //declare a lambda function to parse the date
             Func<string, DateTime?> parseDate = (string row) =>
             {
-                if (row == null) throw new ArgumentNullException(nameof(row));
-                DateTime parse;
-                return DateTime.TryParse(row, out parse)
-                    ? (DateTime?)parse
-                    : null;
+                if (string.IsNullOrEmpty(row))
+                    return null;
+                DateTime parse = DateUtils.parseDate(row);
+                if (parse == DateTime.MinValue)
+                    return null;
+                return parse;
             };
 
             return (from DataRow row in x.Rows
@@ -41,7 +42,7 @@ namespace MatcheoAltice
                     {
                         Nombre = row["Nombre Usuario"].ToString(),
                         DNumb = row["DN Numero"].ToString(),
-                        FechaActivacion = parseDate(row["Fecha Activacion"].ToString()),
+                        FechaActivacion = row.IsNull("Fecha Activacion") ? null : parseDate(row["Fecha Activacion"].ToString()),
                         Sim = row["SIM Card"].ToString(),
                         Estado = row["Estado"].ToString(),
                         Ordenes = row["Orden Instalacion"].ToString(),

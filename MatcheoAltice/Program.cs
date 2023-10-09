@@ -34,6 +34,7 @@ namespace MatcheoAltice
                 }
                 else break;
             }
+            //Application.Run(new Dashboard());
         }
     }
 }

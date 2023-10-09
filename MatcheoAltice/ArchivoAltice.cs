@@ -11,7 +11,7 @@ namespace MatcheoAltice
 {
     public partial class ArchivoAltice : Form
     {
-        private List<Altice> AlticeDoc = null; // Variable para almacenar los datos del archivo de Excel
+        private List<Altice> AlticeDoc = new List<Altice>(); // Variable para almacenar los datos del archivo de Excel
 
         public ArchivoAltice()
         {
@@ -33,12 +33,21 @@ namespace MatcheoAltice
                 MessageBox.Show("Ningun archivo fue cargado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            string filePath = openFileDialog1.FileName;
-            using (ExcelPackage package1 = new ExcelPackage(new FileInfo(filePath)))
+            try
             {
-                ExcelWorksheet worksheet1 = package1.Workbook.Worksheets[0];
-                AlticeDoc = Altice.Parse(ExcelToDataTableConverter.Convert(worksheet1));
-                dataGridView1.DataSource = AlticeDoc;
+                string filePath = openFileDialog1.FileName;
+                using (ExcelPackage package1 = new ExcelPackage(new FileInfo(filePath)))
+                {
+                    ExcelWorksheet worksheet1 = package1.Workbook.Worksheets[0];
+                    AlticeDoc = Altice.Parse(ExcelToDataTableConverter.Convert(worksheet1));
+                    dataGridView1.DataSource = AlticeDoc;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El archivo selecionado no es valido o erroneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
             }
         }
 
@@ -62,47 +71,16 @@ namespace MatcheoAltice
             }
             await Task.Run(() =>
             {
-                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.ActiveSheet;
-
                 try
                 {
-                    worksheet.Name = "Datos";
-
-                    int columnIndex = 0;
-                    // fill the header row
-                    foreach (DataGridViewColumn column in dataGridView1.Columns)
-                    {
-                        columnIndex++;
-                        worksheet.Cells[1, columnIndex] = column.HeaderText;
-                    }
-                    // fill the actual content
-                    int rowIndex = 0;
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        rowIndex++;
-                        columnIndex = 0;
-                        foreach (DataGridViewColumn column in dataGridView1.Columns)
-                        {
-                            columnIndex++;
-                            worksheet.Cells[rowIndex + 1, columnIndex] = row.Cells[columnIndex - 1].Value;
-                        }
-                    }
-                    // save the application
-                    workbook.SaveAs(path);
+                    ExcelFn.ExportExcel(path, dataGridView1);
                     MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                finally
-                {
-                    excel.Quit();
-                    workbook = null;
-                    excel = null;
-                }
+
             });
             label1.Text = "Exportado!";
         }
@@ -146,6 +124,11 @@ namespace MatcheoAltice
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
         {
 
         }

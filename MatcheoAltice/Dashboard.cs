@@ -83,7 +83,9 @@ namespace MatcheoAltice
         private void Dashboard_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            label2.Text = DateTime.Now.ToString("D");
+            label2.Text = DateTime.Now.ToString("D",
+                System.Globalization.CultureInfo.CreateSpecificCulture("es-ES")
+                );
             if (Properties.Settings.Default.Rol.ToLower() != "admin")
             {
                 iconButton10.Visible = false;

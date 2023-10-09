@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NodaTime.Text;
+using NodaTime;
 using OfficeOpenXml;
 
 namespace MatcheoAltice
@@ -18,6 +21,11 @@ namespace MatcheoAltice
         public ReporteFinal()
         {
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "dd/MM/yyyy";
         }
         public static class ExcelToDataTableConverter
         {
@@ -84,10 +92,47 @@ namespace MatcheoAltice
             }
 
             DB = Final.Parse(Alticedoc, Basedoc);
-            dataGridView1.DataSource = DB;
+            //find the oldest date in the db, they are not sorted by date, Final.Fecha
 
+
+            dataGridView1.DataSource = DB;
             btnExportar.Enabled = true;
             GenButton.Enabled = true;
+
+            //date manipulation
+
+            var firstDate = DB.FirstOrDefault(
+                x => x.Fecha is null == false
+                );
+            if (firstDate == null) return;
+            DateTime oldest = (DateTime)firstDate.Fecha;
+            // find the newest date in the db
+            DateTime newest = (DateTime)firstDate.Fecha;
+            //set the date range
+            foreach (var final in DB)
+            {
+                if (final.Fecha == null) continue;
+                var Fecha = (DateTime)final.Fecha;
+                if (Fecha == DateTime.MinValue) continue;
+
+                if (Fecha < oldest)
+                {
+                    oldest = Fecha;
+                }
+
+                if (Fecha > newest)
+                {
+                    newest = Fecha;
+                }
+            }
+            dateTimePicker1.MaxDate = newest;
+            dateTimePicker1.MinDate = oldest;
+            dateTimePicker2.MaxDate = newest;
+            dateTimePicker2.MinDate = oldest;
+            dateTimePicker1.Value = oldest;
+            dateTimePicker2.Value = newest;
+            dateTimePicker1.Enabled = true;
+            dateTimePicker2.Enabled = true;
 
         }
         private DataTable Cargar_doc()
@@ -134,6 +179,7 @@ namespace MatcheoAltice
         CancellationTokenSource tokenSource2 = new CancellationTokenSource();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (textBox1.Text == "") return;
             if (SearchTask.Status == TaskStatus.Running)
             {
                 // Cancelar la tarea anterior
@@ -156,7 +202,7 @@ namespace MatcheoAltice
                         return;
                     }
                     // Filtrar los datos del DataGridView
-                    dataGridView1.DataSource = Final.Filter(DB, textBox1.Text);
+                    dataGridView1.DataSource = checkBox1.Checked ? Final.Filter(DB, textBox1.Text, checkBox2.Checked).Where(x => x.Fecha is null ? false : checkDate((DateTime)x.Fecha)).ToList() : Final.Filter(DB, textBox1.Text, checkBox2.Checked);
                 }));
             });
 
@@ -220,10 +266,6 @@ namespace MatcheoAltice
             label1.Text = "Exportado!";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -255,6 +297,62 @@ namespace MatcheoAltice
         private void GenButton_Click(object sender, EventArgs e)
         {
             new BoletinScreen(DB).Show();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            setDataPerDate();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            setDataPerDate();
+
+        }
+        bool checkDate(DateTime x)
+        {
+
+            // Convert DateTime to LocalDate using NodaTime
+            LocalDate localDate = LocalDateTime.FromDateTime(x).Date;
+
+
+
+            // Check if any of the patterns can successfully parse the date
+
+            // Convert DateTimePicker values to LocalDate using NodaTime
+            LocalDate startDate = LocalDateTime.FromDateTime(dateTimePicker1.Value).Date;
+            LocalDate endDate = LocalDateTime.FromDateTime(dateTimePicker2.Value).Date;
+
+            return localDate >= startDate.Minus(Period.FromDays(1)) && localDate <= endDate.PlusDays(1);
+
+        }
+
+
+        private void setDataPerDate()
+        {
+            if (!checkBox1.Checked) return;
+            //the format is dd/mm/yyyy
+            if (textBox1.Text == "" && !(textBox1.Text is null))
+            {
+                dataGridView1.DataSource = DB
+     .Where(x => !(x.Fecha is null) && checkDate((DateTime)x.Fecha))
+     .ToList();
+            }
+            dataGridView1.DataSource = Final.Filter(DB, textBox1.Text, checkBox2.Checked).Where(x => !(x.Fecha is null) && checkDate((DateTime)x.Fecha))
+     .ToList();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            panel5.Visible = checkBox1.Checked;
+            dataGridView1.DataSource = checkBox1.Checked ? Final.Filter(DB, textBox1.Text, checkBox2.Checked).Where(x => !(x.Fecha is null) && checkDate((DateTime)x.Fecha)).ToList() : Final.Filter(DB, textBox1.Text, checkBox2.Checked);
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox2.Text = checkBox2.Checked ? "No Contiene busqueda" : "Contiene busqueda";
+            dataGridView1.DataSource = checkBox1.Checked ? Final.Filter(DB, textBox1.Text, checkBox2.Checked).Where(x => x.Fecha is null ? false : checkDate((DateTime)x.Fecha)).ToList() : Final.Filter(DB, textBox1.Text, checkBox2.Checked);
         }
     }
 }
