@@ -307,7 +307,7 @@ namespace MatcheoAltice
             this.textBox1.Location = new System.Drawing.Point(51, 12);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(486, 35);
+            this.textBox1.Size = new System.Drawing.Size(486, 29);
             this.textBox1.TabIndex = 44;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -353,9 +353,9 @@ namespace MatcheoAltice
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 487);
+            this.label1.Location = new System.Drawing.Point(60, 490);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 22);
+            this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 47;
             this.label1.Text = "Exportando...";
             this.label1.Visible = false;
@@ -367,7 +367,7 @@ namespace MatcheoAltice
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(26, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 28);
+            this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 48;
             this.label2.Text = "0 filas";
             // 
@@ -392,7 +392,7 @@ namespace MatcheoAltice
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(31, 174);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(174, 25);
+            this.checkBox1.Size = new System.Drawing.Size(154, 23);
             this.checkBox1.TabIndex = 52;
             this.checkBox1.Text = "Buscar Por Fechas";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -414,7 +414,7 @@ namespace MatcheoAltice
             this.GenButton.Name = "GenButton";
             this.GenButton.Size = new System.Drawing.Size(215, 109);
             this.GenButton.TabIndex = 49;
-            this.GenButton.Text = "Generar Voleto de Pago";
+            this.GenButton.Text = "Generar Volante de Pago";
             this.GenButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.GenButton.UseVisualStyleBackColor = true;
             this.GenButton.Click += new System.EventHandler(this.GenButton_Click);
@@ -451,7 +451,7 @@ namespace MatcheoAltice
             this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.Location = new System.Drawing.Point(937, 27);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(109, 25);
+            this.checkBox2.Size = new System.Drawing.Size(95, 23);
             this.checkBox2.TabIndex = 53;
             this.checkBox2.Text = "Contiene";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -475,7 +475,7 @@ namespace MatcheoAltice
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(384, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 28);
+            this.label5.Size = new System.Drawing.Size(71, 23);
             this.label5.TabIndex = 54;
             this.label5.Text = "Hasta:";
             // 
@@ -485,7 +485,7 @@ namespace MatcheoAltice
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(15, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 28);
+            this.label4.Size = new System.Drawing.Size(78, 23);
             this.label4.TabIndex = 53;
             this.label4.Text = "Desde:";
             // 
@@ -496,7 +496,7 @@ namespace MatcheoAltice
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(132, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 37);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
             this.dateTimePicker1.TabIndex = 51;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -507,7 +507,7 @@ namespace MatcheoAltice
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(497, 8);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 37);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 32);
             this.dateTimePicker2.TabIndex = 52;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -527,7 +527,7 @@ namespace MatcheoAltice
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(31, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(342, 28);
+            this.label3.Size = new System.Drawing.Size(287, 23);
             this.label3.TabIndex = 49;
             this.label3.Text = "Total Monto de Recargas: $0";
             // 
