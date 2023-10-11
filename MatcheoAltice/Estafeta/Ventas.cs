@@ -8,5 +8,30 @@ namespace MatcheoAltice.Estafeta
 {
     internal class Ventas
     {
+        public string Compania { get; set; }
+        public string TransactionID { get; set; }
+        public DateTime FechaDigitacion { get; set; }
+        public DateTime FechaSolicitud{ get; set; }
+        public DateTime FechaTermino { get; set; }
+        public DateTime FechaInstalacion { get; set; }
+        public string Usuario { get; set; }
+        public string NomFactura { get; set; }
+        public string NomActividad { get; set; }
+        public string TipoActividad { get; set; }
+        public string RazonServicio { get; set; }
+        public string Sim { get; set; }
+        public string IDplan { get; set; }
+        public string NomPlan { get; set; }
+        public string MontoDeposito { get; set; }
+        public string MontoEquipo { get; set; }
+        public string MontoEquipoImpuestos { get; set; }
+        public string MontoFinanciamiento { get; set; }
+        public string PagoInicial { get; set; }
+        public string MontoPaquetico { get; set; }
+        public string MontoOrden { get; set; }
+        public string MontoOrdenImpuestos { get; set; }
+        public string MontoCargoparcial{ get; set; }
+        public bool Firmado { get; set; }
+        public static List<Base> Parse(DataTable x)
     }
 }
