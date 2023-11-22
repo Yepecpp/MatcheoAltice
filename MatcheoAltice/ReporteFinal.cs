@@ -27,37 +27,6 @@ namespace MatcheoAltice
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "dd/MM/yyyy";
         }
-        public static class ExcelToDataTableConverter
-        {
-            public static DataTable Convert(ExcelWorksheet worksheet)
-            {
-                DataTable dt = new DataTable(worksheet.Name);
-
-                int totalColumns = worksheet.Dimension.End.Column;
-
-                // Leer los datos de las celdas y agregar columnas al DataTable
-                for (int col = 1; col <= totalColumns; col++)
-                {
-                    var cellValue = worksheet.Cells[1, col].Text;
-                    dt.Columns.Add(cellValue);
-                }
-
-                // Leer los datos de las filas y agregarlas al DataTable
-                int totalRows = worksheet.Dimension.End.Row;
-                for (int row = 2; row <= totalRows; row++)
-                {
-                    var newRow = dt.NewRow();
-                    for (int col = 1; col <= totalColumns; col++)
-                    {
-                        var cellValue = worksheet.Cells[row, col].Text;
-                        newRow[col - 1] = cellValue;
-                    }
-                    dt.Rows.Add(newRow);
-                }
-
-                return dt;
-            }
-        }
         private void ReporteFinal_Load(object sender, EventArgs e)
         {
 
@@ -97,6 +66,7 @@ namespace MatcheoAltice
 
             dataGridView1.DataSource = DB;
             btnExportar.Enabled = true;
+            GenButton.Visible = true;
             GenButton.Enabled = true;
 
             //date manipulation
@@ -137,8 +107,6 @@ namespace MatcheoAltice
         }
         private DataTable Cargar_doc()
         {
-
-
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Archivos de Excel (*.xlsx)|*.xlsx";
             openFileDialog1.Title = "Seleccione el primer archivo de Excel";
@@ -153,27 +121,18 @@ namespace MatcheoAltice
                 using (ExcelPackage package1 = new ExcelPackage(new FileInfo(filePath1)))
                 {
                     ExcelWorksheet worksheet1 = package1.Workbook.Worksheets[0];
-                    var dataTable = ExcelToDataTableConverter.Convert(worksheet1);
+                    var dataTable = ExcelFn.Convert(worksheet1);
                     return dataTable;
 
                 }
             }
             MessageBox.Show("No se pudo cargar el archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
-
-
-
-
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         Task SearchTask = new Task(() => { });
         CancellationTokenSource tokenSource2 = new CancellationTokenSource();
@@ -277,11 +236,9 @@ namespace MatcheoAltice
         {
             double sum = 0;
             (dataGridView1.DataSource as List<Final>).ForEach(x => sum += double.Parse(x.TotalMontoRecargas));
-            //format in currency like 1,000.00$
-            string sumString = sum.ToString("C", CultureInfo.CurrentCulture);
 
             label2.Text = $@"{dataGridView1.RowCount} filas";
-            label3.Text = $@"Total Monto de Recargas: {sumString}";
+            label3.Text = $@"Total Monto de Recargas: {DateUtils.parseDouble(sum)}";
             // dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

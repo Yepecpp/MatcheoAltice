@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatcheoAltice.Estafeta;
+using System;
 using System.Windows.Forms;
 
 namespace MatcheoAltice
@@ -51,8 +52,8 @@ namespace MatcheoAltice
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            openChildForm(new ArchivoJosue());
-            this.Name = "Archivo Base";
+            openChildForm(new EstafetaForm());
+            this.Name = "Reporte de Estafeta";
             timer1.Enabled = false;
         }
 
@@ -101,7 +102,8 @@ namespace MatcheoAltice
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            openChildForm(new ArchivoAltice());
+
+            openChildForm(new EstafetaForm());
             timer1.Enabled = false;
         }
 

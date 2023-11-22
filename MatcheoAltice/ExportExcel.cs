@@ -19,6 +19,34 @@ namespace MatcheoAltice
 {
     class ExcelFn
     {
+        public static System.Data. DataTable Convert(ExcelWorksheet worksheet, int startR=0, int startC=0)
+        {
+            System.Data.DataTable dt = new System.Data.DataTable(worksheet.Name);
+
+            int totalColumns = worksheet.Dimension.End.Column;
+
+            // Leer los datos de las celdas y agregar columnas al DataTable
+            for (int col = 1 + startC; col <= totalColumns; col++)
+            {
+                var cellValue = worksheet.Cells[1+startR, col].Text;
+                dt.Columns.Add(cellValue);
+            }
+
+            // Leer los datos de las filas y agregarlas al DataTable
+            int totalRows = worksheet.Dimension.End.Row;
+            for (int row = 2+startR; row <= totalRows; row++)
+            {
+                var newRow = dt.NewRow();
+                for (int col = 1 + startC; col <= totalColumns; col++)
+                {
+                    var cellValue = worksheet.Cells[row, col].Text;
+                    newRow[col - (startC+1)] = cellValue;
+                }
+                dt.Rows.Add(newRow);
+            }
+
+            return dt;
+        }
         public static void ExportExcel(string path, System.Windows.Forms.DataGridView dataGridView1)
         {
             // Create a new Excel package

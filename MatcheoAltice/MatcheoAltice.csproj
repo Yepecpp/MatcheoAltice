@@ -133,12 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Altice.cs" />
-    <Compile Include="ArchivoJosue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArchivoJosue.Designer.cs">
-      <DependentUpon>ArchivoJosue.cs</DependentUpon>
-    </Compile>
     <Compile Include="Base.cs" />
     <Compile Include="Boletin.cs" />
     <Compile Include="BoletinScreen.cs">
@@ -153,15 +147,14 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchivoAltice.cs">
+    <Compile Include="dateUtils.cs" />
+    <Compile Include="Estafeta\EstafetaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArchivoAltice.Designer.cs">
-      <DependentUpon>ArchivoAltice.cs</DependentUpon>
+    <Compile Include="Estafeta\EstafetaForm.Designer.cs">
+      <DependentUpon>EstafetaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="dateUtils.cs" />
     <Compile Include="Estafeta\Pagos.cs" />
-    <Compile Include="Estafeta\Ventas.cs" />
     <Compile Include="ExportExcel.cs" />
     <Compile Include="Final.cs" />
     <Compile Include="OutBoletin.cs" />
@@ -191,17 +184,14 @@
     <Compile Include="UsersCRUD.Designer.cs">
       <DependentUpon>UsersCRUD.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ArchivoAltice.resx">
-      <DependentUpon>ArchivoAltice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ArchivoJosue.resx">
-      <DependentUpon>ArchivoJosue.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BoletinScreen.resx">
       <DependentUpon>BoletinScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estafeta\EstafetaForm.resx">
+      <DependentUpon>EstafetaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Load.resx">
       <DependentUpon>Load.cs</DependentUpon>
@@ -230,6 +220,7 @@
     <None Include="Properties\DataSources\Base.datasource" />
     <None Include="Properties\DataSources\Final.datasource" />
     <None Include="Properties\DataSources\InputBoletin.datasource" />
+    <None Include="Properties\DataSources\MatcheoAltice.Estafeta.Pagos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

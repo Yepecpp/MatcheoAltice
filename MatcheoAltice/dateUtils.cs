@@ -15,7 +15,7 @@ namespace MatcheoAltice
             var str = x.ToString().Split(' ')[0];
 
             // Format LocalDate to a string with the desired format
-            var patterns = new List<IPattern<LocalDate>>
+            var patterns = new IPattern<LocalDate>[]
     {
         LocalDatePattern.CreateWithInvariantCulture("dd/MM/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("d/MM/yyyy"),
@@ -40,22 +40,42 @@ namespace MatcheoAltice
         {
             str = str.Split(' ')[0];
             // Format LocalDate to a string with the desired format
-            var patterns = new List<IPattern<LocalDate>>
+            var patterns = new IPattern<LocalDate>[]
     {
         LocalDatePattern.CreateWithInvariantCulture("dd/MM/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("d/MM/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("d/M/yyyy"),
-        LocalDatePattern.CreateWithInvariantCulture("dd-MM-yyyy")
+        LocalDatePattern.CreateWithInvariantCulture("dd-MM-yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("d/M/yy"),
+        LocalDatePattern.CreateWithInvariantCulture("d/M/yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("dd/MM/yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("MM/dd/yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("M/dd/yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("M/d/yyyy")
     };
-            if (patterns.Any(pattern => pattern.Parse(str).Success))
+            if (str == null || str == "")
             {
-                var parsedDate = patterns.First(pattern => pattern.Parse(str).Success).Parse(str).Value;
-                return parsedDate.ToDateTimeUnspecified();
+                return DateTime.MinValue;
             }
-            return DateTime.MinValue;
+            try
+            {
 
+                var rightPattern = patterns.First(pattern => pattern.Parse(str).Success);
+                return rightPattern.Parse(str).Value.ToDateTimeUnspecified();
+            }
+            catch (Exception e)
+            {
+                return DateTime.MinValue;
+            }
+        }
+
+        //parse a double and format it to a string with 2 decimals and a comma as mark of thousands
+        static public string parseDouble(double x)
+        {
+            return $"{x.ToString("N2")}$";
         }
     }
+
 
 
 }
