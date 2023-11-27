@@ -18,6 +18,11 @@ namespace MatcheoAltice
         public double? Totalcantidad;
         public static List<OutBoletin> IndividualGenerateReport(List<InputBoletin> _inputs, List<Final> finalData, String operatorName = null)
         {
+            var lastInput = _inputs.Last();
+                if (lastInput.commisionInput =="")
+            {
+                _inputs.RemoveAt(_inputs.Count - 1);
+            }
             if (operatorName != null)
             {
                 finalData = finalData.Where(final => final.Operador == operatorName).ToList();
@@ -30,19 +35,22 @@ namespace MatcheoAltice
                 var matchingBoletin = _inputs.FirstOrDefault(input => Double.Parse(final.TotalMontoRecargas) >=
                 input.minVal && Double.Parse(final.TotalMontoRecargas) <= input.maxVal);
 
+                    double totalVen = 0, totalCant = 0;
+                    Double.TryParse(final.TotalCantidadRecargas, out totalCant);
+                    Double.TryParse(final.TotalMontoRecargas,out totalVen);
                 if (matchingBoletin != null)
                 {
                     double commission = matchingBoletin.getIsPercentage() ? Double.Parse(final.TotalMontoRecargas) * matchingBoletin.getCommision() : matchingBoletin.getCommision();
                     output.Add(new OutBoletin
                     {
                         Codistribuidor = final.Codistribuidor,
-                        TotalVendido = Double.Parse(final.TotalMontoRecargas),
+                        TotalVendido = totalVen,
                         Comision = commission,
                         Operador = final.Operador,
                         estado = final.Estado,
                         numero = final.DNumb,
                         fecha = final.FechaTitle,
-                        Totalcantidad = Double.Parse(final.TotalCantidadRecargas),
+                        Totalcantidad = totalCant,
                     });
                 }
                 else
@@ -50,14 +58,14 @@ namespace MatcheoAltice
                     output.Add(new OutBoletin
                     {
                         Codistribuidor = final.Codistribuidor,
-                        TotalVendido = Double.Parse(final.TotalMontoRecargas),
+                        TotalVendido = totalVen,
                         Comision = 0.0,
                         Operador = final.Operador,
                         numero = final.DNumb,
 
                         estado = final.Estado,
                         fecha = final.FechaTitle,
-                        Totalcantidad = Double.Parse(final.TotalCantidadRecargas),
+                        Totalcantidad =totalCant,
                     });
                 }
             }
@@ -66,6 +74,11 @@ namespace MatcheoAltice
         public static List<OutBoletin> GenerateReport(List<InputBoletin> _inputs, List<Final> finalData)
         {
             var output = new List<OutBoletin>();
+            var lastInput = _inputs.Last();
+            if (lastInput.commisionInput == "")
+            {
+                _inputs.RemoveAt(_inputs.Count - 1);
+            }
 
             foreach (var final in finalData)
             {
@@ -81,13 +94,14 @@ namespace MatcheoAltice
                 }
                 // Check if the operator is already present in the output list
                 var existingOperator = output.FirstOrDefault(o => o.Codistribuidor == final.Operador);
-
+                double totalCant = 0;
+                Double.TryParse(final.TotalCantidadRecargas, out totalCant);
                 if (existingOperator != null)
                 {
                     // If the operator is already in the output list, update the total sales and total commission
                     existingOperator.TotalVendido += totalSales;
                     existingOperator.Comision += totalCommission;
-                    existingOperator.Totalcantidad += Double.Parse(final.TotalCantidadRecargas);
+                    existingOperator.Totalcantidad += totalCant;
                 }
                 else
                 {
@@ -98,7 +112,7 @@ namespace MatcheoAltice
                         TotalVendido = totalSales,
                         Comision = totalCommission,
                         Operador = final.Operador,
-                        Totalcantidad = Double.Parse(final.TotalCantidadRecargas),
+                        Totalcantidad = totalCant,
                     });
                 }
             }

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MatcheoAltice.Properties;
 using Microsoft.Office.Interop.Excel;
-using MySqlX.XDevAPI.Common;
 using System.Windows.Forms;
 using System.Windows.Shapes;
 using System.Xml.Linq;

@@ -38,6 +38,12 @@ namespace MatcheoAltice
         }
         static public DateTime parseDate(string str)
         {
+            //str recives 45171, convert it to DatetTime
+            if (Double.TryParse(str, out double value))
+            {
+                return DateTime.FromOADate(value);
+            }
+           
             str = str.Split(' ')[0];
             // Format LocalDate to a string with the desired format
             var patterns = new IPattern<LocalDate>[]
