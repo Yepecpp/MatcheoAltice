@@ -78,7 +78,40 @@ namespace MatcheoAltice.Estafeta
             });
 
         }
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+            saveFileDialog.Title = "Exportar a Excel";
+            string path = "";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFileDialog.FileName;
+                label1.Visible = true;
+                label1.Text = "Exportando...";
+            }
+            else
+            {
+                MessageBox.Show("Los datos no fueron exportados", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            await Task.Run(() =>
+           {
+               try
+               {
+                   ExcelFn.ExportExcel(path, dataGridView1);
+                   MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               }
+
+           });
+            label1.Text = "Exportado!";
+        }
         private void btnPay_Click(object sender, EventArgs e)
         {
 
