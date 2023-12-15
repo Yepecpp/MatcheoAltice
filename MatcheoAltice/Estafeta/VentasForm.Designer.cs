@@ -1,6 +1,6 @@
 ﻿namespace MatcheoAltice.Estafeta
 {
-    partial class EstafetaForm
+    partial class VentasForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstafetaForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLocal = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -62,14 +61,11 @@
             this.TelContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelContacto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userloginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -185,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 743);
+            this.label1.Location = new System.Drawing.Point(71, 743);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 47;
@@ -207,7 +203,7 @@
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(251, 87);
             this.btnPay.TabIndex = 46;
-            this.btnPay.Text = "Importar Pagos";
+            this.btnPay.Text = "Importar Ventas";
             this.btnPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -301,13 +297,13 @@
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton5.IconSize = 35;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(22, 17);
+            this.iconButton5.Location = new System.Drawing.Point(4, 17);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.iconButton5.Size = new System.Drawing.Size(342, 101);
             this.iconButton5.TabIndex = 42;
-            this.iconButton5.Text = "Reporte Estafeta";
+            this.iconButton5.Text = "Reporte Ventas";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = false;
@@ -319,7 +315,6 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -346,9 +341,7 @@
             this.ConceptoPago,
             this.TelContacto,
             this.TelContacto2,
-            this.Estado,
-            this.userloginDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.pagosBindingSource;
+            this.Estado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -460,18 +453,7 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             // 
-            // userloginDataGridViewTextBoxColumn
-            // 
-            this.userloginDataGridViewTextBoxColumn.DataPropertyName = "Userlogin";
-            this.userloginDataGridViewTextBoxColumn.HeaderText = "Userlogin";
-            this.userloginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userloginDataGridViewTextBoxColumn.Name = "userloginDataGridViewTextBoxColumn";
-            // 
-            // pagosBindingSource
-            // 
-            this.pagosBindingSource.DataSource = typeof(MatcheoAltice.Estafeta.Pagos);
-            // 
-            // EstafetaForm
+            // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -481,7 +463,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EstafetaForm";
+            this.Name = "VentasForm";
             this.Text = "EstafetaForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -491,7 +473,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +492,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn companiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn transactionIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource pagosBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dte;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
@@ -525,7 +505,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TelContacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelContacto2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userloginDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

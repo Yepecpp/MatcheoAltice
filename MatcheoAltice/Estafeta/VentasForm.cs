@@ -15,9 +15,9 @@ using static MatcheoAltice.ReporteFinal;
 
 namespace MatcheoAltice.Estafeta
 {
-    public partial class EstafetaForm : Form
+    public partial class VentasForm : Form
     {
-        public EstafetaForm()
+        public VentasForm()
         {
             InitializeComponent();
         }

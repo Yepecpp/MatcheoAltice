@@ -76,5 +76,45 @@ namespace MatcheoAltice.Estafeta
            k.TelContacto2.ToLower().Contains(SearchStr) ||
            k.Cliente.ToLower().Contains(SearchStr)).ToList();
         }
-    }
+        public static List<Pagos> GenerateReport(List<Pagos> finalData)
+        {
+            var output = new List<Pagos>();
+
+            foreach (var final in finalData)
+            {
+                // Check if the operator is already present in the output list
+                var existingOperator = output.FirstOrDefault(o => o.Userlogin == final.Userlogin);
+                double totalEfe=0, totalTarj=0, totalOtra=0;
+                Double.TryParse(final.FPefectivo, out totalEfe);
+                Double.TryParse(final.FPotras, out totalOtra);
+                Double.TryParse(final.FPtarjeta, out totalTarj);
+                if (existingOperator != null)
+                {
+                    // If the operator is already in the output list, update the total sales and total commission
+                    totalTarj+= double.Parse(final.FPtarjeta);
+                    totalOtra += double.Parse(final.FPotras);
+                    totalEfe += double.Parse(final.FPefectivo);
+                    existingOperator.FPtarjeta = totalTarj.ToString();
+                    existingOperator.FPefectivo = totalEfe.ToString();
+                    existingOperator.FPotras = totalOtra.ToString();
+                }
+                else
+                {
+                    // If the operator is not in the output list, add a new entry for the operator
+                    output.Add(new Pagos
+                    {
+                        Userlogin=final.Userlogin,
+                        FPtarjeta = totalTarj.ToString(),
+                    FPefectivo = totalEfe.ToString(),
+                    FPotras = totalOtra.ToString(),
+                });
+                }
+            }
+
+            return output;
+        }
+
+    
+}
+
 }

@@ -52,6 +52,7 @@ namespace MatcheoAltice
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -63,6 +64,7 @@ namespace MatcheoAltice
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.iconButton5);
             this.panel1.Controls.Add(this.iconButton3);
@@ -160,7 +162,7 @@ namespace MatcheoAltice
             // 
             this.iconButton3.FlatAppearance.BorderSize = 0;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton3.ForeColor = System.Drawing.Color.White;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.FileText;
             this.iconButton3.IconColor = System.Drawing.Color.White;
@@ -249,7 +251,7 @@ namespace MatcheoAltice
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton10.IconSize = 29;
             this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(20, 258);
+            this.iconButton10.Location = new System.Drawing.Point(20, 302);
             this.iconButton10.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton10.Name = "iconButton10";
             this.iconButton10.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
@@ -396,6 +398,28 @@ namespace MatcheoAltice
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileText;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 29;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(20, 258);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(261, 36);
+            this.iconButton1.TabIndex = 43;
+            this.iconButton1.Text = "Reporte Ventas";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,6 +471,7 @@ namespace MatcheoAltice
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Panel panel4;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 

@@ -188,6 +188,13 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="dateUtils.cs" />
+    <Compile Include="Estafeta\ventas.cs" />
+    <Compile Include="Estafeta\VentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estafeta\VentasForm.Designer.cs">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estafeta\EstafetaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estafeta\VentasForm.resx">
+      <DependentUpon>VentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estafeta\EstafetaForm.resx">
       <DependentUpon>EstafetaForm.cs</DependentUpon>
