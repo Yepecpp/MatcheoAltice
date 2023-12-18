@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLocal = new FontAwesome.Sharp.IconButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPay = new FontAwesome.Sharp.IconButton();
@@ -61,17 +56,38 @@
             this.TelContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelContacto2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoTransaccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasaporteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomSubcanalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonServicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.simDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPlanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoOrdenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telContactoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telContacto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estaFirmadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnLocal);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnPay);
@@ -83,95 +99,13 @@
             this.panel1.Size = new System.Drawing.Size(251, 1030);
             this.panel1.TabIndex = 50;
             // 
-            // btnLocal
-            // 
-            this.btnLocal.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLocal.FlatAppearance.BorderSize = 0;
-            this.btnLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLocal.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
-            this.btnLocal.IconColor = System.Drawing.Color.Black;
-            this.btnLocal.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLocal.IconSize = 40;
-            this.btnLocal.Location = new System.Drawing.Point(0, 765);
-            this.btnLocal.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLocal.Name = "btnLocal";
-            this.btnLocal.Size = new System.Drawing.Size(251, 87);
-            this.btnLocal.TabIndex = 51;
-            this.btnLocal.Text = "Volante Por Usuario";
-            this.btnLocal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLocal.UseVisualStyleBackColor = true;
-            this.btnLocal.Visible = false;
-            this.btnLocal.Click += new System.EventHandler(this.btnLocal_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(251, 175);
-            this.panel4.TabIndex = 50;
-            this.panel4.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 23);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Otro: 0";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 23);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Efectivo: 0";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 23);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Tarjeta: 0";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(89, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Totales";
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 190);
+            this.label2.Location = new System.Drawing.Point(90, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 48;
@@ -181,7 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 743);
+            this.label1.Location = new System.Drawing.Point(67, 816);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 18);
             this.label1.TabIndex = 47;
@@ -315,6 +249,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -341,7 +276,28 @@
             this.ConceptoPago,
             this.TelContacto,
             this.TelContacto2,
-            this.Estado});
+            this.Estado,
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn,
+            this.estadoTransaccionDataGridViewTextBoxColumn,
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn,
+            this.cedulaDataGridViewTextBoxColumn,
+            this.pasaporteDataGridViewTextBoxColumn,
+            this.nomFacturaDataGridViewTextBoxColumn,
+            this.nomSubcanalDataGridViewTextBoxColumn,
+            this.nomActividadDataGridViewTextBoxColumn,
+            this.tipoActividadDataGridViewTextBoxColumn,
+            this.razonServicioDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.simDataGridViewTextBoxColumn,
+            this.nomPlanDataGridViewTextBoxColumn,
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn,
+            this.montoOrdenDataGridViewTextBoxColumn,
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn,
+            this.telContactoDataGridViewTextBoxColumn,
+            this.telContacto2DataGridViewTextBoxColumn,
+            this.estaFirmadoDataGridViewCheckBoxColumn,
+            this.vendedorDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.ventaBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -453,6 +409,161 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             // 
+            // ventaBindingSource
+            // 
+            this.ventaBindingSource.DataSource = typeof(MatcheoAltice.Estafeta.Venta);
+            // 
+            // fechaDigitacionOrdenDataGridViewTextBoxColumn
+            // 
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn.DataPropertyName = "FechaDigitacionOrden";
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn.HeaderText = "FechaDigitacionOrden";
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDigitacionOrdenDataGridViewTextBoxColumn.Name = "fechaDigitacionOrdenDataGridViewTextBoxColumn";
+            // 
+            // estadoTransaccionDataGridViewTextBoxColumn
+            // 
+            this.estadoTransaccionDataGridViewTextBoxColumn.DataPropertyName = "EstadoTransaccion";
+            this.estadoTransaccionDataGridViewTextBoxColumn.HeaderText = "EstadoTransaccion";
+            this.estadoTransaccionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.estadoTransaccionDataGridViewTextBoxColumn.Name = "estadoTransaccionDataGridViewTextBoxColumn";
+            // 
+            // usuarioCreoOrdenDataGridViewTextBoxColumn
+            // 
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn.DataPropertyName = "UsuarioCreoOrden";
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn.HeaderText = "UsuarioCreoOrden";
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usuarioCreoOrdenDataGridViewTextBoxColumn.Name = "usuarioCreoOrdenDataGridViewTextBoxColumn";
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            // 
+            // pasaporteDataGridViewTextBoxColumn
+            // 
+            this.pasaporteDataGridViewTextBoxColumn.DataPropertyName = "Pasaporte";
+            this.pasaporteDataGridViewTextBoxColumn.HeaderText = "Pasaporte";
+            this.pasaporteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pasaporteDataGridViewTextBoxColumn.Name = "pasaporteDataGridViewTextBoxColumn";
+            // 
+            // nomFacturaDataGridViewTextBoxColumn
+            // 
+            this.nomFacturaDataGridViewTextBoxColumn.DataPropertyName = "NomFactura";
+            this.nomFacturaDataGridViewTextBoxColumn.HeaderText = "NomFactura";
+            this.nomFacturaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomFacturaDataGridViewTextBoxColumn.Name = "nomFacturaDataGridViewTextBoxColumn";
+            // 
+            // nomSubcanalDataGridViewTextBoxColumn
+            // 
+            this.nomSubcanalDataGridViewTextBoxColumn.DataPropertyName = "NomSubcanal";
+            this.nomSubcanalDataGridViewTextBoxColumn.HeaderText = "NomSubcanal";
+            this.nomSubcanalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomSubcanalDataGridViewTextBoxColumn.Name = "nomSubcanalDataGridViewTextBoxColumn";
+            // 
+            // nomActividadDataGridViewTextBoxColumn
+            // 
+            this.nomActividadDataGridViewTextBoxColumn.DataPropertyName = "NomActividad";
+            this.nomActividadDataGridViewTextBoxColumn.HeaderText = "NomActividad";
+            this.nomActividadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomActividadDataGridViewTextBoxColumn.Name = "nomActividadDataGridViewTextBoxColumn";
+            // 
+            // tipoActividadDataGridViewTextBoxColumn
+            // 
+            this.tipoActividadDataGridViewTextBoxColumn.DataPropertyName = "TipoActividad";
+            this.tipoActividadDataGridViewTextBoxColumn.HeaderText = "TipoActividad";
+            this.tipoActividadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tipoActividadDataGridViewTextBoxColumn.Name = "tipoActividadDataGridViewTextBoxColumn";
+            // 
+            // razonServicioDataGridViewTextBoxColumn
+            // 
+            this.razonServicioDataGridViewTextBoxColumn.DataPropertyName = "RazonServicio";
+            this.razonServicioDataGridViewTextBoxColumn.HeaderText = "RazonServicio";
+            this.razonServicioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.razonServicioDataGridViewTextBoxColumn.Name = "razonServicioDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // simDataGridViewTextBoxColumn
+            // 
+            this.simDataGridViewTextBoxColumn.DataPropertyName = "Sim";
+            this.simDataGridViewTextBoxColumn.HeaderText = "Sim";
+            this.simDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.simDataGridViewTextBoxColumn.Name = "simDataGridViewTextBoxColumn";
+            // 
+            // nomPlanDataGridViewTextBoxColumn
+            // 
+            this.nomPlanDataGridViewTextBoxColumn.DataPropertyName = "NomPlan";
+            this.nomPlanDataGridViewTextBoxColumn.HeaderText = "NomPlan";
+            this.nomPlanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomPlanDataGridViewTextBoxColumn.Name = "nomPlanDataGridViewTextBoxColumn";
+            // 
+            // grupoActivacionOrdenDataGridViewTextBoxColumn
+            // 
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn.DataPropertyName = "GrupoActivacionOrden";
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn.HeaderText = "GrupoActivacionOrden";
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.grupoActivacionOrdenDataGridViewTextBoxColumn.Name = "grupoActivacionOrdenDataGridViewTextBoxColumn";
+            // 
+            // montoOrdenDataGridViewTextBoxColumn
+            // 
+            this.montoOrdenDataGridViewTextBoxColumn.DataPropertyName = "MontoOrden";
+            this.montoOrdenDataGridViewTextBoxColumn.HeaderText = "MontoOrden";
+            this.montoOrdenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.montoOrdenDataGridViewTextBoxColumn.Name = "montoOrdenDataGridViewTextBoxColumn";
+            // 
+            // montoOrdenConImpuestosDataGridViewTextBoxColumn
+            // 
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn.DataPropertyName = "MontoOrdenConImpuestos";
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn.HeaderText = "MontoOrdenConImpuestos";
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.montoOrdenConImpuestosDataGridViewTextBoxColumn.Name = "montoOrdenConImpuestosDataGridViewTextBoxColumn";
+            // 
+            // telContactoDataGridViewTextBoxColumn
+            // 
+            this.telContactoDataGridViewTextBoxColumn.DataPropertyName = "TelContacto";
+            this.telContactoDataGridViewTextBoxColumn.HeaderText = "TelContacto";
+            this.telContactoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telContactoDataGridViewTextBoxColumn.Name = "telContactoDataGridViewTextBoxColumn";
+            // 
+            // telContacto2DataGridViewTextBoxColumn
+            // 
+            this.telContacto2DataGridViewTextBoxColumn.DataPropertyName = "TelContacto2";
+            this.telContacto2DataGridViewTextBoxColumn.HeaderText = "TelContacto2";
+            this.telContacto2DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telContacto2DataGridViewTextBoxColumn.Name = "telContacto2DataGridViewTextBoxColumn";
+            // 
+            // estaFirmadoDataGridViewCheckBoxColumn
+            // 
+            this.estaFirmadoDataGridViewCheckBoxColumn.DataPropertyName = "EstaFirmado";
+            this.estaFirmadoDataGridViewCheckBoxColumn.HeaderText = "EstaFirmado";
+            this.estaFirmadoDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.estaFirmadoDataGridViewCheckBoxColumn.Name = "estaFirmadoDataGridViewCheckBoxColumn";
+            // 
+            // vendedorDataGridViewTextBoxColumn
+            // 
+            this.vendedorDataGridViewTextBoxColumn.DataPropertyName = "Vendedor";
+            this.vendedorDataGridViewTextBoxColumn.HeaderText = "Vendedor";
+            this.vendedorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vendedorDataGridViewTextBoxColumn.Name = "vendedorDataGridViewTextBoxColumn";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 19);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Total Monto: 0$";
+            // 
             // VentasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,12 +578,11 @@
             this.Text = "EstafetaForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,11 +615,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TelContacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelContacto2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDigitacionOrdenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoTransaccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioCreoOrdenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pasaporteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomFacturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomSubcanalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomActividadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoActividadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonServicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn simDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomPlanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupoActivacionOrdenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoOrdenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoOrdenConImpuestosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telContactoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telContacto2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estaFirmadoDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ventaBindingSource;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton btnLocal;
     }
 }

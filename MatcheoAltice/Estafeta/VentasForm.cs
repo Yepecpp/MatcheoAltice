@@ -21,7 +21,7 @@ namespace MatcheoAltice.Estafeta
         {
             InitializeComponent();
         }
-        List<Pagos> pagos = null;
+        List<Venta> Ventas = null;
         private DataTable Cargar_doc()
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -69,16 +69,16 @@ namespace MatcheoAltice.Estafeta
                     }
                     if (string.IsNullOrEmpty(textBox1.Text))
                     {
-                        dataGridView1.DataSource = pagos;
+                        dataGridView1.DataSource = Ventas;
                         return;
                     }
                     // Filtrar los datos del DataGridView
-                    dataGridView1.DataSource = Pagos.FilterPagos(pagos, textBox1.Text);
+                    dataGridView1.DataSource = Venta.FilterVentas(Ventas, textBox1.Text);
                 }));
             });
 
         }
-       async private void btnExportar_Click(object sender, EventArgs e)
+        async private void btnExportar_Click(object sender, EventArgs e)
         {
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -123,12 +123,10 @@ namespace MatcheoAltice.Estafeta
                     MessageBox.Show("No se pudo cargar el archivo");
                     return;
                 }
-                pagos = Pagos.Parse(Table);
+                Ventas = Venta.Parse(Table);
 
-                dataGridView1.DataSource = pagos;
+                dataGridView1.DataSource = Ventas;
                 btnExportar.Enabled = true;
-                panel4.Visible = true;
-                btnLocal.Visible= true;
             }
             catch (Exception)
             {
@@ -150,76 +148,11 @@ namespace MatcheoAltice.Estafeta
         }
         private void setDataGrid()
         {
-            double totalTarjeta = 0, totalEfectivo = 0, totalOtros = 0;
-            List<Pagos> Data = dataGridView1.DataSource as List<Pagos>;
-            if (Data != null)
-            {
-                foreach (var item in Data)
-                {
-                    totalTarjeta += double.Parse(item.FPtarjeta);
-                    totalEfectivo += double.Parse(item.FPefectivo);
-                    totalOtros += double.Parse(item.FPotras);
-
-
-                }
-            }
-            label2.Text = $@"{Data.Count} filas";
-            label4.Text = $@"Tarjeta: {DateUtils.parseDouble(totalTarjeta)}";
-            label5.Text = $@"Efectivo: {DateUtils.parseDouble(totalEfectivo)}";
-            label6.Text = $@"Otro: {DateUtils.parseDouble(totalOtros)}";
-
+            decimal sum = dataGridView1.DataSource as List<Venta> == null ? 0 : (dataGridView1.DataSource as List<Venta>).Sum(x => x.MontoOrdenConImpuestos);
+            label2.Text = $@"{dataGridView1.RowCount} filas";
+            label3.Text = $@"Total Monto: {sum}";
 
         }
 
-        private void pagosBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btnLocal_Click(object sender, EventArgs e)
-        {
-            //indi
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
-            saveFileDialog.Title = "Exportar a Excel";
-            string path = "";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                path = saveFileDialog.FileName;
-            }
-            else
-            {
-                MessageBox.Show("Los datos no fueron exportados", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            await Task.Run(() =>
-            {
-                try
-                {
-                    var output = Pagos.GenerateReport(dataGridView1.DataSource as List<Pagos>);
-
-                    DataTable dt = new DataTable();
-                    dt.Columns.Add("UserLogin");
-                    dt.Columns.Add("FPTarjeta");
-                    dt.Columns.Add("FPEfectivo");
-                    dt.Columns.Add("FPOtros");
-                    dt.Columns.Add("Total");
-                    foreach (var item in output)
-                    {
-                        dt.Rows.Add(item.Userlogin, item.FPtarjeta, item.FPefectivo, item.FPotras, item.FPtarjeta+item.FPefectivo+item.FPotras);
-                    }
-
-
-                    ExcelFn.ExportExcel(path, dt);
-                    MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            });
-        }
     }
 }

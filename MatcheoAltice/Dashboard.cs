@@ -143,5 +143,12 @@ namespace MatcheoAltice
         {
             this.panel4.Location = new System.Drawing.Point((this.panelCForm.Width / 2) - (this.panel4.Width / 2), (int)Math.Round((this.panelCForm.Height / 2.2)) - (this.panel4.Height / 2));
         }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new VentasForm());
+            this.Name = "Reporte de Ventas";
+            timer1.Enabled = false;
+        }
     }
 }

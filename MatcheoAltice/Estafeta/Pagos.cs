@@ -9,8 +9,6 @@ namespace MatcheoAltice.Estafeta
 {
     public class Pagos
     {
-        // el campo de cliente es el que se llama cn en el documento de pagos
-        //el campo que se llama DTE son las fechas de los pagos
         public string Caja { get; set; }
         public string Estado { get; set; }
         public string Dte { get; set; }
@@ -78,43 +76,43 @@ namespace MatcheoAltice.Estafeta
         }
         public static List<Pagos> GenerateReport(List<Pagos> finalData)
         {
-            var output = new List<Pagos>();
+            var output = new Dictionary<string, Pagos>();
 
             foreach (var final in finalData)
             {
-                // Check if the operator is already present in the output list
-                var existingOperator = output.FirstOrDefault(o => o.Userlogin == final.Userlogin);
-                double totalEfe=0, totalTarj=0, totalOtra=0;
-                Double.TryParse(final.FPefectivo, out totalEfe);
-                Double.TryParse(final.FPotras, out totalOtra);
-                Double.TryParse(final.FPtarjeta, out totalTarj);
-                if (existingOperator != null)
+                if (!output.TryGetValue(final.Userlogin, out Pagos existingOperator))
                 {
-                    // If the operator is already in the output list, update the total sales and total commission
-                    totalTarj+= double.Parse(final.FPtarjeta);
-                    totalOtra += double.Parse(final.FPotras);
-                    totalEfe += double.Parse(final.FPefectivo);
-                    existingOperator.FPtarjeta = totalTarj.ToString();
-                    existingOperator.FPefectivo = totalEfe.ToString();
-                    existingOperator.FPotras = totalOtra.ToString();
-                }
-                else
-                {
-                    // If the operator is not in the output list, add a new entry for the operator
-                    output.Add(new Pagos
+                    existingOperator = new Pagos
                     {
-                        Userlogin=final.Userlogin,
-                        FPtarjeta = totalTarj.ToString(),
-                    FPefectivo = totalEfe.ToString(),
-                    FPotras = totalOtra.ToString(),
-                });
+                        Userlogin = final.Userlogin,
+                        FPefectivo = "0",
+                        FPtarjeta = "0",
+                        FPotras = "0",
+                    };
+                    output[final.Userlogin] = existingOperator;
+                }
+
+                if (Double.TryParse(final.FPefectivo, out double totalEfe))
+                {
+                    existingOperator.FPefectivo = (double.Parse(existingOperator.FPefectivo) + totalEfe).ToString();
+                }
+
+                if (Double.TryParse(final.FPotras, out double totalOtra))
+                {
+                    existingOperator.FPotras = (double.Parse(existingOperator.FPotras) + totalOtra).ToString();
+                }
+
+                if (Double.TryParse(final.FPtarjeta, out double totalTarj))
+                {
+                    existingOperator.FPtarjeta = (double.Parse(existingOperator.FPtarjeta) + totalTarj).ToString();
                 }
             }
 
-            return output;
+            return output.Values.ToList();
         }
 
-    
-}
+
+
+    }
 
 }
