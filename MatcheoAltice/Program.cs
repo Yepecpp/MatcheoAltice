@@ -14,27 +14,27 @@ namespace MatcheoAltice
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //var login = new Login();
-            //while (true)
-            //{
+            var login = new Login();
+            while (true)
+            {
 
-            //    Application.Run(login);
-            //    if (login.auth)
-            //    {
+                Application.Run(login);
+                if (login.auth)
+                {
 
-            //        var Dashboard = new Dashboard();
-            //        Application.Run(Dashboard);
-            //        if (Dashboard.reauth)
-            //        {
-            //            login = new Login();
-            //        }
-            //        else
-            //            break;
+                    var Dashboard = new Dashboard();
+                    Application.Run(Dashboard);
+                    if (Dashboard.reauth)
+                    {
+                        login = new Login();
+                    }
+                    else
+                        break;
 
-            //    }
-            //    else break;
-            //}
-            Application.Run(new Dashboard());
+                }
+                else break;
+            }
+            //Application.Run(new Dashboard());
         }
     }
 }

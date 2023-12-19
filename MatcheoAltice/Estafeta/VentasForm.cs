@@ -115,25 +115,25 @@ namespace MatcheoAltice.Estafeta
         private void btnPay_Click(object sender, EventArgs e)
         {
 
-            try
+            //try
+            //{
+            DataTable Table = Cargar_doc();
+            if (Table == null)
             {
-                DataTable Table = Cargar_doc();
-                if (Table == null)
-                {
-                    MessageBox.Show("No se pudo cargar el archivo");
-                    return;
-                }
-                Ventas = Venta.Parse(Table);
-
-                dataGridView1.DataSource = Ventas;
-                btnExportar.Enabled = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("El archivo selecionado no es valido o erroneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("No se pudo cargar el archivo");
                 return;
             }
+            Ventas = Venta.Parse(Table);
+
+            dataGridView1.DataSource = Ventas;
+            btnExportar.Enabled = true;
+            //}
+            //catch (Exception)
+            //{
+            //MessageBox.Show("El archivo selecionado no es valido o erroneo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //return;
+            //}
         }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -150,7 +150,7 @@ namespace MatcheoAltice.Estafeta
         {
             decimal sum = dataGridView1.DataSource as List<Venta> == null ? 0 : (dataGridView1.DataSource as List<Venta>).Sum(x => x.MontoOrdenConImpuestos);
             label2.Text = $@"{dataGridView1.RowCount} filas";
-            label3.Text = $@"Total Monto: {sum}";
+            label3.Text = $"Total Monto: {DateUtils.parseDouble(double.Parse(sum.ToString()))}";
 
         }
 

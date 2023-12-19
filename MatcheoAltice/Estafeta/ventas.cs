@@ -25,7 +25,7 @@ namespace MatcheoAltice.Estafeta
         public decimal MontoOrdenConImpuestos { get; set; }
         public string TelContacto { get; set; }
         public string TelContacto2 { get; set; }
-        public bool EstaFirmado { get; set; }
+        public string EstaFirmado { get; set; }
         public string Vendedor { get; set; }
 
         // Method to parse a DataTable into a list of Venta objects
@@ -57,7 +57,7 @@ namespace MatcheoAltice.Estafeta
                     MontoOrdenConImpuestos = decimal.Parse(row["monto_orden_con_impuestos"]?.ToString() ?? "0"),
                     TelContacto = row["tel_contacto"]?.ToString(),
                     TelContacto2 = row["tel_contacto2"]?.ToString(),
-                    EstaFirmado = bool.Parse(row["esta_firmado"]?.ToString() ?? "false"),
+                    EstaFirmado = row["esta_firmado"]?.ToString(),
                     Vendedor = row["vendedor"]?.ToString()
                 };
                 ventasList.Add(venta);

@@ -78,7 +78,7 @@ namespace MatcheoAltice.Estafeta
             });
 
         }
-       async private void btnExportar_Click(object sender, EventArgs e)
+        async private void btnExportar_Click(object sender, EventArgs e)
         {
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -128,7 +128,7 @@ namespace MatcheoAltice.Estafeta
                 dataGridView1.DataSource = pagos;
                 btnExportar.Enabled = true;
                 panel4.Visible = true;
-                btnLocal.Visible= true;
+                btnLocal.Visible = true;
             }
             catch (Exception)
             {
@@ -207,7 +207,9 @@ namespace MatcheoAltice.Estafeta
                     dt.Columns.Add("Total");
                     foreach (var item in output)
                     {
-                        dt.Rows.Add(item.Userlogin, item.FPtarjeta, item.FPefectivo, item.FPotras, item.FPtarjeta+item.FPefectivo+item.FPotras);
+                        // parse to double item.FPtarjeta+item.FPefectivo+item.FPotras
+                        var total = double.Parse(item.FPtarjeta) + double.Parse(item.FPefectivo) + double.Parse(item.FPotras);
+                        dt.Rows.Add(item.Userlogin, item.FPtarjeta, item.FPefectivo, item.FPotras, total);
                     }
 
 
