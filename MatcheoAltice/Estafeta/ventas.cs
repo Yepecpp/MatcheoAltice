@@ -39,7 +39,7 @@ namespace MatcheoAltice.Estafeta
             {
                 var venta = new Venta
                 {
-                    FechaDigitacionOrden = DateTime.Parse(row["fecha_digitacion_orden"].ToString()),
+                    FechaDigitacionOrden = DateUtils.parseDate(row["fecha_digitacion_orden"].ToString()),
                     EstadoTransaccion = row["estado_transaccion"]?.ToString(),
                     UsuarioCreoOrden = row["usuario_creo_orden"]?.ToString(),
                     Cedula = row["cedula"]?.ToString(),

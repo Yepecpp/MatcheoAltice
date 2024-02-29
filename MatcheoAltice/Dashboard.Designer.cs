@@ -162,7 +162,7 @@ namespace MatcheoAltice
             // 
             this.iconButton5.FlatAppearance.BorderSize = 0;
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton5.ForeColor = System.Drawing.Color.White;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
             this.iconButton5.IconColor = System.Drawing.Color.White;
@@ -175,7 +175,7 @@ namespace MatcheoAltice
             this.iconButton5.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.iconButton5.Size = new System.Drawing.Size(235, 36);
             this.iconButton5.TabIndex = 41;
-            this.iconButton5.Text = "Reporte Total";
+            this.iconButton5.Text = "Reporte Reventa";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = true;

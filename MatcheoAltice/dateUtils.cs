@@ -56,6 +56,7 @@ namespace MatcheoAltice
         LocalDatePattern.CreateWithInvariantCulture("d/M/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("dd/MM/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("MM/dd/yyyy"),
+        LocalDatePattern.CreateWithInvariantCulture("MM/dd/yy"),
         LocalDatePattern.CreateWithInvariantCulture("M/dd/yyyy"),
         LocalDatePattern.CreateWithInvariantCulture("M/d/yyyy")
     };
