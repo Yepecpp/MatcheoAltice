@@ -172,6 +172,56 @@ namespace MatcheoAltice
         {
 
         }
+
+        private async void iconButton2_Click(object sender, EventArgs e)
+        {
+            //tota
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+            saveFileDialog.Title = "Exportar a Excel";
+            string path = "";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFileDialog.FileName;
+
+            }
+            else
+            {
+                MessageBox.Show("Los datos no fueron exportados", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            await Task.Run(() =>
+            {
+                try
+                {
+                    // list to datatable
+                    var output = OutBoletin.GenerateReportFromDb(inputs, finalData);
+                    //list to datatable
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("Codistribuidor");
+                    dt.Columns.Add("Operador");
+                    // dt.Columns.Add("Estado")
+                    dt.Columns.Add("Total Cantidad Vendido");
+                    dt.Columns.Add("Total Monto Vendido");
+
+                    dt.Columns.Add("Comision");
+                    foreach (var item in output)
+                    {
+                        dt.Rows.Add(item.Codistribuidor, item.Operador, item.Totalcantidad, item.TotalVendido, item.Comision);
+                    }
+
+
+                    ExcelFn.ExportExcel(path, dt);
+                    MessageBox.Show("Los datos han sido exportados correctamente.", @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error al exportar los datos: " + ex.Message, @"Exportar a Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            });
+        }
     }
 }
 /*

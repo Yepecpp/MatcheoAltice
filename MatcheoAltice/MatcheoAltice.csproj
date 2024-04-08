@@ -193,6 +193,20 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="dateUtils.cs" />
+    <Compile Include="entities\sims.cs" />
+    <Compile Include="entities\vendor.cs" />
+    <Compile Include="Estafeta\Reseller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estafeta\Reseller.Designer.cs">
+      <DependentUpon>Reseller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estafeta\SimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estafeta\SimForm.Designer.cs">
+      <DependentUpon>SimForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estafeta\ventas.cs" />
     <Compile Include="Estafeta\VentasForm.cs">
       <SubType>Form</SubType>
@@ -242,6 +256,12 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estafeta\Reseller.resx">
+      <DependentUpon>Reseller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estafeta\SimForm.resx">
+      <DependentUpon>SimForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estafeta\VentasForm.resx">
       <DependentUpon>VentasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +295,8 @@
     <None Include="Properties\DataSources\Base.datasource" />
     <None Include="Properties\DataSources\Final.datasource" />
     <None Include="Properties\DataSources\InputBoletin.datasource" />
+    <None Include="Properties\DataSources\MatcheoAltice.entities.Reseller.datasource" />
+    <None Include="Properties\DataSources\MatcheoAltice.entities.Sim.datasource" />
     <None Include="Properties\DataSources\MatcheoAltice.Estafeta.Pagos.datasource" />
     <None Include="Properties\DataSources\MatcheoAltice.Estafeta.Venta.datasource" />
     <None Include="Properties\Settings.settings">
