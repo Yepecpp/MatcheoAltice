@@ -42,6 +42,7 @@
             this.commisionInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inputBoletinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnLocal = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
@@ -58,9 +59,8 @@
             this.panel3.Controls.Add(this.iconButton7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1406, 38);
+            this.panel3.Size = new System.Drawing.Size(937, 25);
             this.panel3.TabIndex = 3;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
@@ -73,10 +73,9 @@
             this.iconButton8.IconColor = System.Drawing.Color.LightGray;
             this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton8.IconSize = 26;
-            this.iconButton8.Location = new System.Drawing.Point(1271, 0);
-            this.iconButton8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton8.Location = new System.Drawing.Point(847, 0);
             this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Size = new System.Drawing.Size(45, 38);
+            this.iconButton8.Size = new System.Drawing.Size(30, 25);
             this.iconButton8.TabIndex = 17;
             this.iconButton8.TabStop = false;
             this.iconButton8.UseVisualStyleBackColor = true;
@@ -91,10 +90,9 @@
             this.iconButton6.IconColor = System.Drawing.Color.LightGray;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton6.IconSize = 26;
-            this.iconButton6.Location = new System.Drawing.Point(1316, 0);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton6.Location = new System.Drawing.Point(877, 0);
             this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(45, 38);
+            this.iconButton6.Size = new System.Drawing.Size(30, 25);
             this.iconButton6.TabIndex = 16;
             this.iconButton6.TabStop = false;
             this.iconButton6.UseVisualStyleBackColor = true;
@@ -109,10 +107,9 @@
             this.iconButton7.IconColor = System.Drawing.Color.LightGray;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconButton7.IconSize = 26;
-            this.iconButton7.Location = new System.Drawing.Point(1361, 0);
-            this.iconButton7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton7.Location = new System.Drawing.Point(907, 0);
             this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(45, 38);
+            this.iconButton7.Size = new System.Drawing.Size(30, 25);
             this.iconButton7.TabIndex = 15;
             this.iconButton7.TabStop = false;
             this.iconButton7.UseVisualStyleBackColor = true;
@@ -152,13 +149,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 28);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1178, 824);
+            this.dataGridView1.Size = new System.Drawing.Size(769, 536);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
@@ -190,13 +187,34 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.iconButton2);
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.btnLocal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1191, 38);
+            this.panel1.Location = new System.Drawing.Point(794, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 838);
+            this.panel1.Size = new System.Drawing.Size(143, 544);
             this.panel1.TabIndex = 5;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 40;
+            this.iconButton2.Location = new System.Drawing.Point(0, 331);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(143, 71);
+            this.iconButton2.TabIndex = 8;
+            this.iconButton2.Text = "Volante de Pago Vendedores";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton1
             // 
@@ -204,14 +222,13 @@
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileCircleExclamation;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
-            this.iconButton1.Location = new System.Drawing.Point(0, 620);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton1.Location = new System.Drawing.Point(0, 402);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(215, 109);
+            this.iconButton1.Size = new System.Drawing.Size(143, 71);
             this.iconButton1.TabIndex = 7;
             this.iconButton1.Text = "Volante de Pago Total";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -228,10 +245,9 @@
             this.btnLocal.IconColor = System.Drawing.Color.Black;
             this.btnLocal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLocal.IconSize = 40;
-            this.btnLocal.Location = new System.Drawing.Point(0, 729);
-            this.btnLocal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLocal.Location = new System.Drawing.Point(0, 473);
             this.btnLocal.Name = "btnLocal";
-            this.btnLocal.Size = new System.Drawing.Size(215, 109);
+            this.btnLocal.Size = new System.Drawing.Size(143, 71);
             this.btnLocal.TabIndex = 6;
             this.btnLocal.Text = "Volante de Pago Indiviudal";
             this.btnLocal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -240,14 +256,15 @@
             // 
             // BoletinScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1406, 876);
+            this.ClientSize = new System.Drawing.Size(937, 569);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BoletinScreen";
             this.Text = "Generar Boletin";
             this.Load += new System.EventHandler(this.BoletinScreen_Load);
@@ -273,5 +290,6 @@
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnLocal;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

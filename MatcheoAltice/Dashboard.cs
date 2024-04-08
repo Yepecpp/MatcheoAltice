@@ -1,6 +1,8 @@
 ﻿using MatcheoAltice.Estafeta;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace MatcheoAltice
 {
@@ -9,7 +11,17 @@ namespace MatcheoAltice
         public Dashboard()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(800, 600); // Minimum size example
+            // Adjust the form's starting position to fit within the screen's working area
+            Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
+            this.Width = Math.Min(this.Width, workingArea.Width);
+            this.Height = Math.Min(this.Height, workingArea.Height);
+            this.Location = new Point((workingArea.Width - this.Width) / 2,
+                                      (workingArea.Height - this.Height) / 2);
         }
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
 
         [System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -143,5 +155,29 @@ namespace MatcheoAltice
         {
             this.panel4.Location = new System.Drawing.Point((this.panelCForm.Width / 2) - (this.panel4.Width / 2), (int)Math.Round((this.panelCForm.Height / 2.2)) - (this.panel4.Height / 2));
         }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new VentasForm());
+            this.Name = "Reporte de Ventas";
+            timer1.Enabled = false;
+        }
+
+        private void iconButton4_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new ResellerForm());
+            this.Name = "Reporte de Vendedores";
+            timer1.Enabled = false;
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            iconButton9.Enabled = false;
+            return;
+            openChildForm(new SimForm());
+            this.Name = "Reporte de SIM";
+            timer1.Enabled = false;
+        }
+
     }
 }

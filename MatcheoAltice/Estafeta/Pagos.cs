@@ -9,8 +9,6 @@ namespace MatcheoAltice.Estafeta
 {
     public class Pagos
     {
-        // el campo de cliente es el que se llama cn en el documento de pagos
-        //el campo que se llama DTE son las fechas de los pagos
         public string Caja { get; set; }
         public string Estado { get; set; }
         public string Dte { get; set; }
@@ -76,5 +74,45 @@ namespace MatcheoAltice.Estafeta
            k.TelContacto2.ToLower().Contains(SearchStr) ||
            k.Cliente.ToLower().Contains(SearchStr)).ToList();
         }
+        public static List<Pagos> GenerateReport(List<Pagos> finalData)
+        {
+            var output = new Dictionary<string, Pagos>();
+
+            foreach (var final in finalData)
+            {
+                if (!output.TryGetValue(final.Userlogin, out Pagos existingOperator))
+                {
+                    existingOperator = new Pagos
+                    {
+                        Userlogin = final.Userlogin,
+                        FPefectivo = "0",
+                        FPtarjeta = "0",
+                        FPotras = "0",
+                    };
+                    output[final.Userlogin] = existingOperator;
+                }
+
+                if (Double.TryParse(final.FPefectivo, out double totalEfe))
+                {
+                    existingOperator.FPefectivo = (double.Parse(existingOperator.FPefectivo) + totalEfe).ToString();
+                }
+
+                if (Double.TryParse(final.FPotras, out double totalOtra))
+                {
+                    existingOperator.FPotras = (double.Parse(existingOperator.FPotras) + totalOtra).ToString();
+                }
+
+                if (Double.TryParse(final.FPtarjeta, out double totalTarj))
+                {
+                    existingOperator.FPtarjeta = (double.Parse(existingOperator.FPtarjeta) + totalTarj).ToString();
+                }
+            }
+
+            return output.Values.ToList();
+        }
+
+
+
     }
+
 }

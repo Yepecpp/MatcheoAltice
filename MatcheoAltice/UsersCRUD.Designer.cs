@@ -87,8 +87,7 @@ namespace MatcheoAltice
             this.tablaUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaUsuarios.EnableHeadersVisualStyles = false;
             this.tablaUsuarios.GridColor = System.Drawing.Color.Black;
-            this.tablaUsuarios.Location = new System.Drawing.Point(0, 105);
-            this.tablaUsuarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tablaUsuarios.Location = new System.Drawing.Point(0, 68);
             this.tablaUsuarios.MultiSelect = false;
             this.tablaUsuarios.Name = "tablaUsuarios";
             this.tablaUsuarios.ReadOnly = true;
@@ -97,7 +96,7 @@ namespace MatcheoAltice
             this.tablaUsuarios.RowHeadersWidth = 51;
             this.tablaUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tablaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaUsuarios.Size = new System.Drawing.Size(1126, 872);
+            this.tablaUsuarios.Size = new System.Drawing.Size(728, 567);
             this.tablaUsuarios.TabIndex = 122;
             this.tablaUsuarios.TabStop = false;
             this.tablaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuarios_CellClick);
@@ -105,38 +104,34 @@ namespace MatcheoAltice
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Location = new System.Drawing.Point(31, 599);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(21, 389);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 8);
+            this.panel2.Size = new System.Drawing.Size(224, 5);
             this.panel2.TabIndex = 134;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Location = new System.Drawing.Point(31, 427);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(21, 278);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 8);
+            this.panel1.Size = new System.Drawing.Size(224, 5);
             this.panel1.TabIndex = 135;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel4.Controls.Add(this.panel3);
-            this.panel4.Location = new System.Drawing.Point(27, 261);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Location = new System.Drawing.Point(18, 170);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(336, 8);
+            this.panel4.Size = new System.Drawing.Size(224, 5);
             this.panel4.TabIndex = 131;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(460, 8);
+            this.panel3.Size = new System.Drawing.Size(307, 5);
             this.panel3.TabIndex = 13;
             // 
             // txtClave
@@ -144,10 +139,9 @@ namespace MatcheoAltice
             this.txtClave.BackColor = System.Drawing.SystemColors.Control;
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(27, 387);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtClave.Location = new System.Drawing.Point(18, 252);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(338, 35);
+            this.txtClave.Size = new System.Drawing.Size(225, 24);
             this.txtClave.TabIndex = 133;
             // 
             // txtNombre
@@ -155,20 +149,18 @@ namespace MatcheoAltice
             this.txtNombre.BackColor = System.Drawing.SystemColors.Control;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(27, 221);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Location = new System.Drawing.Point(18, 144);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(336, 35);
+            this.txtNombre.Size = new System.Drawing.Size(224, 24);
             this.txtNombre.TabIndex = 130;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 339);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(15, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 38);
+            this.label4.Size = new System.Drawing.Size(130, 25);
             this.label4.TabIndex = 129;
             this.label4.Text = "Contraseña";
             // 
@@ -176,10 +168,9 @@ namespace MatcheoAltice
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 509);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(15, 331);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 38);
+            this.label3.Size = new System.Drawing.Size(42, 25);
             this.label3.TabIndex = 128;
             this.label3.Text = "Rol";
             // 
@@ -187,10 +178,9 @@ namespace MatcheoAltice
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 178);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(25, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(313, 38);
+            this.label2.Size = new System.Drawing.Size(209, 25);
             this.label2.TabIndex = 127;
             this.label2.Text = "Nombre de Usuario";
             // 
@@ -200,14 +190,13 @@ namespace MatcheoAltice
             this.txtRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtRol.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.txtRol.ItemHeight = 36;
+            this.txtRol.ItemHeight = 22;
             this.txtRol.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.txtRol.Location = new System.Drawing.Point(31, 552);
-            this.txtRol.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRol.Location = new System.Drawing.Point(21, 359);
             this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(334, 44);
+            this.txtRol.Size = new System.Drawing.Size(224, 30);
             this.txtRol.TabIndex = 136;
             // 
             // update
@@ -222,10 +211,9 @@ namespace MatcheoAltice
             this.update.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.update.IconSize = 55;
             this.update.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.update.Location = new System.Drawing.Point(271, 881);
-            this.update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.update.Location = new System.Drawing.Point(181, 573);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(96, 82);
+            this.update.Size = new System.Drawing.Size(64, 53);
             this.update.TabIndex = 126;
             this.update.UseVisualStyleBackColor = false;
             this.update.Click += new System.EventHandler(this.update_Click);
@@ -242,10 +230,9 @@ namespace MatcheoAltice
             this.insert.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.insert.IconSize = 55;
             this.insert.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.insert.Location = new System.Drawing.Point(157, 881);
-            this.insert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.insert.Location = new System.Drawing.Point(105, 573);
             this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(96, 82);
+            this.insert.Size = new System.Drawing.Size(64, 53);
             this.insert.TabIndex = 125;
             this.insert.UseVisualStyleBackColor = false;
             this.insert.Click += new System.EventHandler(this.insert_Click);
@@ -262,10 +249,9 @@ namespace MatcheoAltice
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 55;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.iconButton1.Location = new System.Drawing.Point(42, 881);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton1.Location = new System.Drawing.Point(28, 573);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(96, 82);
+            this.iconButton1.Size = new System.Drawing.Size(64, 53);
             this.iconButton1.TabIndex = 124;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -281,11 +267,10 @@ namespace MatcheoAltice
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton10.IconSize = 50;
             this.iconButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton10.Location = new System.Drawing.Point(34, 13);
-            this.iconButton10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.iconButton10.Location = new System.Drawing.Point(23, 8);
             this.iconButton10.Name = "iconButton10";
-            this.iconButton10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.iconButton10.Size = new System.Drawing.Size(398, 82);
+            this.iconButton10.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.iconButton10.Size = new System.Drawing.Size(265, 53);
             this.iconButton10.TabIndex = 137;
             this.iconButton10.Text = "Usuarios";
             this.iconButton10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,9 +292,10 @@ namespace MatcheoAltice
             this.panel5.Controls.Add(this.txtClave);
             this.panel5.Controls.Add(this.txtNombre);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(1126, 0);
+            this.panel5.Location = new System.Drawing.Point(750, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(397, 977);
+            this.panel5.Size = new System.Drawing.Size(265, 635);
             this.panel5.TabIndex = 138;
             // 
             // panel6
@@ -317,21 +303,21 @@ namespace MatcheoAltice
             this.panel6.Controls.Add(this.iconButton10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1126, 100);
+            this.panel6.Size = new System.Drawing.Size(750, 65);
             this.panel6.TabIndex = 139;
             // 
             // UsersCRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1523, 977);
+            this.ClientSize = new System.Drawing.Size(1015, 635);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.tablaUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UsersCRUD";
             this.Text = "UsersCRUD";
             this.Load += new System.EventHandler(this.UsersCRUD_Load);
